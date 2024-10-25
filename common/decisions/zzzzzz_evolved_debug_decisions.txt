@@ -86,6 +86,8 @@
 
 						alloys = 50000
 						consumer_goods = 50000
+						unity = 50000
+						sr_tec_ai_power = 50000
 
 						rare_crystals = 50000
 						volatile_motes = 50000
@@ -96,6 +98,8 @@
 						sr_dark_matter = 50000
 
 						astral_threads = 50000
+
+						influence = 50000
 					}
 				}
 			}
