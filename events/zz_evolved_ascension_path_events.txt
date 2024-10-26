@@ -246,6 +246,60 @@ namespace = tec_ascension
 			name = OK
 		}
 	}
+	country_event = { # T1 ascension picked (compat country flag) - on_ascension_perk_picked
+		id = tec_ascension.901
+		hide_window = yes
+
+		is_triggered_only = yes
+
+		trigger = {
+			NOT = {
+				has_country_flag = already_picked_ascension_path
+			}
+			tec_has_t1_ascension_perk = yes
+		}
+
+		immediate = {
+			set_country_flag = already_picked_ascension_path
+		}
+	}
+	country_event = { # T1 tradition picked (compat country flag) - on_tradition_picked
+		id = tec_ascension.902
+		hide_window = yes
+
+		is_triggered_only = yes
+
+		trigger = {
+			NOT = {
+				has_country_flag = already_picked_ascension_path_tradition
+			}
+			tec_has_ascension_tradition = yes
+		}
+
+		immediate = {
+			set_country_flag = already_picked_ascension_path
+		}
+	}
+	country_event = { # T1 crisis picked (compat country flag) - on_ascension_perk_picked
+		id = tec_ascension.903
+		hide_window = yes
+
+		is_triggered_only = yes
+
+		trigger = {
+			NOT = {
+				has_country_flag = already_picked_crisis
+			}
+			OR = {
+				has_ascension_perk = ap_become_the_crisis
+				has_ascension_perk = ap_cosmogenesis
+			}
+		}
+
+		immediate = {
+			set_country_flag = already_picked_crisis
+		}
+	}
  # /
 
  # On ap pick - on_ascension_perk_picked

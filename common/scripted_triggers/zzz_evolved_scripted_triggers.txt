@@ -729,6 +729,73 @@ tec_has_any_gestalt_ethics = {
 	tec_is_ascension_hater = {	# TODO MACHINE AGE
 		always = no
 	}
+
+	tec_has_ascension_perk = {	# TODO ASCENSION
+		always = no
+	}
+	tec_has_t1_ascension_perk = {	# TODO ASCENSION
+		OR = {
+			has_ascension_perk = ap_mind_over_matter
+			has_ascension_perk = ap_engineered_evolution
+			has_ascension_perk = ap_the_flesh_is_weak
+			has_ascension_perk = ap_organo_machine_interfacing
+			has_ascension_perk = ap_organo_machine_interfacing_assimilator
+			has_ascension_perk = ap_synthetic_evolution
+			has_ascension_perk = ap_synthetic_age
+		}
+	}
+
+	tec_has_ascension_tradition = {	# TODO ASCENSION
+		OR = {
+			# Mystical
+			has_tradition = tr_psionics_adopt
+			has_tradition = tr_tec_psychics_adopt
+			has_tradition = tr_tec_ethereals_adopt
+			#has_tradition = tr_tec_ethereals_psionic_adopt
+			#has_tradition = tr_tec_ethereals_psychic_adopt
+			# Biological
+			has_tradition = tr_genetics_adopt
+			has_tradition = tr_tec_biogenics_adopt
+			#has_tradition = tr_tec_biocreation_adopt
+			# Technoorganic
+			has_tradition = tr_cybernetics_adopt
+			has_tradition = tr_cybernetics_assimilator_adopt
+			has_tradition = tr_tec_bioware_adopt
+			#has_tradition = tr_tec_mechanitor_adopt
+			# Technosynthetic
+			has_tradition = tr_synthetics_adopt
+			#has_tradition = tr_tec_digital_adopt
+			has_tradition = tr_modularity_adopt
+			has_tradition = tr_nanotech_adopt
+			has_tradition = tr_virtuality_adopt
+		}
+	}
+
+	tec_has_ascension_tradition_finished = {	# TODO ASCENSION
+		OR = {
+			# Mystical
+			has_tradition = tr_psionics_finish
+			has_tradition = tr_tec_psychics_finish
+			has_tradition = tr_tec_ethereals_finish
+			#has_tradition = tr_tec_ethereals_psionic_finish
+			#has_tradition = tr_tec_ethereals_psychic_finish
+			# Biological
+			has_tradition = tr_genetics_finish
+			has_tradition = tr_tec_biogenics_finish
+			#has_tradition = tr_tec_biocreation_finish
+			# Technoorganic
+			has_tradition = tr_cybernetics_finish
+			has_tradition = tr_cybernetics_assimilator_finish
+			has_tradition = tr_tec_bioware_finish
+			#has_tradition = tr_tec_mechanitor_finish
+			# Technosynthetic
+			has_tradition = tr_synthetics_finish
+			#has_tradition = tr_tec_digital_finish
+			has_tradition = tr_modularity_finish
+			has_tradition = tr_nanotech_finish
+			has_tradition = tr_virtuality_finish
+		}
+	}
  # /
  # Groups
  	tec_has_mystical_ascension_path = {
@@ -1291,7 +1358,31 @@ tec_has_any_gestalt_ethics = {
 		always = no
 	}
  # /
+ # Compat
+	# Mainly done for Exakan request
+	tec_cannot_take_crisis_path = {
+		OR = {
+			has_country_flag = cannot_take_crisis
+			has_country_flag = already_picked_crisis
+			has_country_flag = already_picked_crisis_path
+		}
+	}
 
+	tec_cannot_take_ascension_path = {
+		OR = {
+			has_country_flag = cannot_take_ascension_path
+			has_country_flag = already_picked_ascension_path
+			has_country_flag = already_picked_ascension_path_tradition
+		}
+	}
+
+	tec_cannot_take_ascension_path_tradition = {
+		OR = {
+			has_country_flag = cannot_take_ascension_path_tradition
+			has_country_flag = already_picked_ascension_path_tradition
+		}
+	}
+ # /
  # Generic
 	tec_has_main_ascension_path = {
 		OR = {

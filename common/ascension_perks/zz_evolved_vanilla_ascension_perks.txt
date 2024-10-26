@@ -145,6 +145,7 @@ ap_become_the_crisis = {
 			has_ascension_perk = ap_defender_of_the_galaxy
 			has_origin = origin_slavers
 		}
+		tec_cannot_take_crisis_path = no
 	}
 
 	possible = {
@@ -178,6 +179,7 @@ ap_become_the_crisis = {
 	on_enabled = {
 		hidden_effect = {
 			set_ai_personality = became_the_crisis
+			set_country_flag = already_picked_crisis
 		}
 		activate_crisis_progression = nemesis_path
 	}
@@ -282,6 +284,7 @@ ap_cosmogenesis = {
 			has_ascension_perk = ap_defender_of_the_galaxy
 			has_origin = origin_slavers # No crisis for MSI
 		}
+		tec_cannot_take_crisis_path = no
 	}
 
 	possible = {
@@ -309,6 +312,7 @@ ap_cosmogenesis = {
 				which = cosmogenesis_world_advanced_logic_produced
 				value = 0
 			}
+			set_country_flag = already_picked_crisis
 		}
 		activate_crisis_progression = cosmogenesis_path
 	}

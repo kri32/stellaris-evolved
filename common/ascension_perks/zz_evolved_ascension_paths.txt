@@ -38,6 +38,8 @@
 	 # Base - Allows branching
 		potential = {
 			has_utopia = yes
+			# Compat
+			tec_cannot_take_ascension_path = no
 			# Auth lockers
 			is_mechanical_empire = no
 			is_synthetic_empire = no
@@ -378,6 +380,8 @@
 	 # Base - Allows branching
 		potential = {
 			has_utopia = yes
+			# Compat
+			tec_cannot_take_ascension_path = no
 			# Auth lockers
 			is_mechanical_empire = no
 			is_synthetic_empire = no
@@ -751,6 +755,8 @@
 				has_utopia = yes
 				has_machine_age_dlc = yes
 			}
+			# Compat
+			tec_cannot_take_ascension_path = no
 			# Auth lockers
 			is_gestalt = no
 			is_mechanical_empire = no
@@ -1176,6 +1182,8 @@
 				has_utopia = yes
 				has_machine_age_dlc = yes
 			}
+			# Compat
+			tec_cannot_take_ascension_path = no
 			# Auth lockers
 			is_hive_empire = yes
 			# Path lockers
@@ -1587,6 +1595,8 @@
 				has_utopia = yes
 				has_machine_age_dlc = yes
 			}
+			# Compat
+			tec_cannot_take_ascension_path = no
 			# Auth lockers
 			is_machine_empire = yes
 			has_civic = civic_machine_assimilator
@@ -2121,6 +2131,8 @@
 				has_utopia = yes
 				has_machine_age_dlc = yes
 			}
+			# Compat
+			tec_cannot_take_ascension_path = no
 			# Auth lockers
 			is_mechanical_empire = no
 			is_individual_machine = no
@@ -2397,6 +2409,8 @@
 				has_synthetic_dawn = yes
 				has_machine_age_dlc = yes
 			}
+			# Compat
+			tec_cannot_take_ascension_path = no
 			# Auth lockers
 			OR = {
 				is_machine_empire = yes

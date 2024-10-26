@@ -11,6 +11,9 @@ tradition_cybernetics = {
 			has_utopia = yes
 			has_machine_age_dlc = yes
 		}
+		# Compat
+		tec_cannot_take_ascension_path_tradition = no
+		# Auths
 		is_machine_empire = no
 		is_individual_machine = no
 		is_natural_design_empire = no

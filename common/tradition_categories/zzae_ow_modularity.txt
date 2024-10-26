@@ -5,6 +5,9 @@ tradition_modularity = {
 
 	potential = {
 		has_machine_age_dlc = yes
+		# Compat
+		tec_cannot_take_ascension_path_tradition = no
+		# Auths
 		OR = {
 			is_machine_empire = yes
 			is_individual_machine = yes

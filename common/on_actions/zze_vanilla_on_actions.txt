@@ -271,6 +271,8 @@ on_tech_increased = {
 
 on_tradition_picked = {
 	events = {
+		tec_ascension.902					# T1 tradition picked (compat country flag)
+
 		tec_rebalance.650					# Hive pompous reward
 
 		# Ascension groups
@@ -282,7 +284,6 @@ on_tradition_picked = {
 		#tec_digital_path.110
 		#tec_psionic_path.110
 		#tec_psychic_path.110
-
 	}
 }
 
@@ -732,6 +733,9 @@ on_ascension_perk_picked = {
 		tec_ascension.30					# Synthetic Evolution
 		tec_ascension.40					# Mind Over Matter picked
 		tec_ascension.50					# Synthetic Age picked TODO ASCENSION MACHINE
+
+		tec_ascension.901					# T1 ascension picked (compat country flag)
+		tec_ascension.903					# T1 crisis picked (compat country flag)
 	}
 }
 

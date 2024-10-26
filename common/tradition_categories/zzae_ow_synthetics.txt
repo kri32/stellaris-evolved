@@ -7,6 +7,9 @@ tradition_synthetics = {
 	finish_bonus = "tr_synthetics_finish"
 
 	potential = {
+		# Compat
+		tec_cannot_take_ascension_path_tradition = no
+		# Auths
 		OR = {
 			AND = {
 				is_regular_empire = yes

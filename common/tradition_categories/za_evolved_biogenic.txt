@@ -9,6 +9,9 @@ tradition_tec_biogenics = {
 	potential = {
 		always = no
 		has_utopia = yes
+		# Compat
+		tec_cannot_take_ascension_path_tradition = no
+		# Auths
 		is_machine_empire = no
 		#tec_has_genetic_ascension_path = no
 		# Count as biogenic ^
