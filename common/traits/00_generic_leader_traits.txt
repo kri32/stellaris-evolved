@@ -1022,12 +1022,14 @@ trait_imperial_heir = {
 		COUNCIL = triggered
 		TIER = none
 	}
-	custom_tooltip_with_modifiers = "trait_imperial_heir_effects"
 	triggered_self_modifier = {
 		potential = {
 			has_paragon_dlc = yes
 		}
 		leader_trait_selection_options_add = 1
+	}
+	triggered_self_modifier = {
+		tec_leader_only_councilor_traits = 1
 	}
 	triggered_self_modifier = {
 		potential = {

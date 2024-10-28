@@ -588,7 +588,10 @@ country_event = { # Handle node ascension traits
 	is_triggered_only = yes
 
 	trigger = {
+		tec_country_leader_gets_starting_actions = yes
+
 		FROM = {
+			tec_leader_gets_starting_actions = { flag = tec_aiauth_ascension_trait }
 			tec_is_aiauth_node = yes
 			OR = {
 				is_ruler = yes
@@ -643,6 +646,7 @@ country_event = { # Handle node ascension traits
 				}
 				add_trait_no_notify = leader_trait_tec_aiauth_synthetic
 			}
+			set_leader_flag = tec_aiauth_ascension_trait
 		}
 		remove_country_flag = tec_force_allow_all_traits
 	}

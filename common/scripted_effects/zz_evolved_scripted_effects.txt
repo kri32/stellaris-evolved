@@ -1144,20 +1144,26 @@ tec_hoarders_deposit_max_resource_V2 = {
 	inline_script = {
 		script = tec_type_hint
 		resource = $resource$
+		[[force] bool = $force$ ]
 	}
 	if = {
 		limit = {
-			exists = owner
-			owner = {
-				resource_income_compare = {
-					resource = $resource$
-					value >= 0
+			OR = {
+				AND = {
+					exists = owner
+					owner = {
+						resource_income_compare = {
+							resource = $resource$
+							value >= 0
+						}
+					}
 				}
+				always = $force|no$
 			}
 		}
 		tec_hoarders_manage_resource_V2 = {
 			RESOURCE = $resource$
-			COUNT = value:tec_hoarder_get_vault_stockpile_V2|RESOURCE|$resource$|MULT|-1|
+			COUNT = value:tec_hoarders_max_that_can_be_deposited_V2|RESOURCE|$resource$|
 		}
 	}
 }
@@ -2569,3 +2575,4 @@ tec_planet_terraform_planet = {
 		"
 	}
 }
+

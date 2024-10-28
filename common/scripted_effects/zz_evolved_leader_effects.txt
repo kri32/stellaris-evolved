@@ -244,3 +244,253 @@ tec_leader_set_aiauth_node_portait_effect = {
 		}
 	}
 }
+tec_pop_copy_job_to_leader = {
+	inline_script = {
+		script = tec_type_hint
+		leader_scope = $leader$
+	}
+	switch = {
+		trigger = has_job
+		politician = {
+			$leader$ = {
+				change_background_job = politician
+			}
+		}
+		executive = {
+			$leader$ = {
+				change_background_job = executive
+			}
+		}
+		tec_ai_computator = {
+			$leader$ = {
+				change_background_job = tec_ai_computator
+			}
+		}
+		tec_ai_high_ordinator = {
+			$leader$ = {
+				change_background_job = tec_ai_high_ordinator
+			}
+		}
+		head_researcher = {
+			$leader$ = {
+				change_background_job = head_researcher
+			}
+		}
+		high_priest = {
+			$leader$ = {
+				change_background_job = high_priest
+			}
+		}
+		technophant = {
+			$leader$ = {
+				change_background_job = technophant
+			}
+		}
+		noble = {
+			$leader$ = {
+				change_background_job = noble
+			}
+		}
+		merchant = {
+			$leader$ = {
+				change_background_job = merchant
+			}
+		}
+		tec_commander = {
+			$leader$ = {
+				change_background_job = tec_commander
+			}
+		}
+		tec_mogul = {
+			$leader$ = {
+				change_background_job = tec_mogul
+			}
+		}
+		tec_technocrat = {
+			$leader$ = {
+				change_background_job = tec_technocrat
+			}
+		}
+		tec_grand_occultist = {
+			$leader$ = {
+				change_background_job = tec_grand_occultist
+			}
+		}
+		tec_grand_archivist = {
+			$leader$ = {
+				change_background_job = tec_grand_archivist
+			}
+		}
+		tec_supervisor_bureaucrat = {
+			$leader$ = {
+				change_background_job = tec_supervisor_bureaucrat
+			}
+		}
+		tec_master_tinker = {
+			$leader$ = {
+				change_background_job = tec_master_tinker
+			}
+		}
+		tec_corpo_consultant = {
+			$leader$ = {
+				change_background_job = tec_corpo_consultant
+			}
+		}
+		tec_corpo_bank_director = {
+			$leader$ = {
+				change_background_job = tec_corpo_bank_director
+			}
+		}
+		tec_corpo_prospector = {
+			$leader$ = {
+				change_background_job = tec_corpo_prospector
+			}
+		}
+		tec_corpo_tinker = {
+			$leader$ = {
+				change_background_job = tec_corpo_tinker
+			}
+		}
+		tec_corpo_ecoprospector = {
+			$leader$ = {
+				change_background_job = tec_corpo_ecoprospector
+			}
+		}
+		researcher = {
+			$leader$ = {
+				change_background_job = researcher
+			}
+		}
+		bureaucrat = {
+			$leader$ = {
+				change_background_job = bureaucrat
+			}
+		}
+		manager = {
+			$leader$ = {
+				change_background_job = manager
+			}
+		}
+		steward = {
+			$leader$ = {
+				change_background_job = steward
+			}
+		}
+		tec_ai_operator = {
+			$leader$ = {
+				change_background_job = tec_ai_operator
+			}
+		}
+		tec_ai_ordinator = {
+			$leader$ = {
+				change_background_job = tec_ai_ordinator
+			}
+		}
+		priest = {
+			$leader$ = {
+				change_background_job = priest
+			}
+		}
+		haruspex = {
+			$leader$ = {
+				change_background_job = haruspex
+			}
+		}
+		death_priest = {
+			$leader$ = {
+				change_background_job = death_priest
+			}
+		}
+		tec_mecha_priest = {
+			$leader$ = {
+				change_background_job = tec_mecha_priest
+			}
+		}
+		foundry = {
+			$leader$ = {
+				change_background_job = foundry
+			}
+		}
+		catalytic_technician = {
+			$leader$ = {
+				change_background_job = catalytic_technician
+			}
+		}
+		artisan = {
+			$leader$ = {
+				change_background_job = artisan
+			}
+		}
+		artificer = {
+			$leader$ = {
+				change_background_job = artificer
+			}
+		}
+		culture_worker = {
+			$leader$ = {
+				change_background_job = culture_worker
+			}
+		}
+		entertainer = {
+			$leader$ = {
+				change_background_job = entertainer
+			}
+		}
+		enforcer = {
+			$leader$ = {
+				change_background_job = enforcer
+			}
+		}
+		clerk = {
+			$leader$ = {
+				change_background_job = clerk
+			}
+		}
+		farmer = {
+			$leader$ = {
+				change_background_job = farmer
+			}
+		}
+		angler = {
+			$leader$ = {
+				change_background_job = angler
+			}
+		}
+		miner = {
+			$leader$ = {
+				change_background_job = miner
+			}
+		}
+		tec_reef_miner = {
+			$leader$ = {
+				change_background_job = tec_reef_miner
+			}
+		}
+		technician = {
+			$leader$ = {
+				change_background_job = technician
+			}
+		}
+		soldier = {
+			$leader$ = {
+				change_background_job = soldier
+			}
+		}
+
+		default = {
+			$leader$ = {
+				switch = {
+					trigger = leader_class
+					inline_script = {
+						script = iterators/tec_iterate_leader_class
+						code = "
+							\$leader_class\$ = {
+								set_random_\$leader_class\$_background_effect = yes
+							}
+						"
+					}
+				}
+			}
+		}
+	}
+}

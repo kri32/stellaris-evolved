@@ -56,6 +56,7 @@ tec_cui_hoarder_$resource$_max = {
                 }
                 tec_hoarders_deposit_max_resource_V2 = {
                     resource = $resource$
+                    force = yes
                 }
             }
         }

@@ -61,6 +61,8 @@ on_game_start_country = {
 		tec_auth_direct_democratic.10		# Democracy/direct democracy extra leader bonus
 
 		tec_misc.4 # validate planets
+
+		antidesync_evolved.1002             # regen leader backgrounds
 	}
 }
 
@@ -574,6 +576,14 @@ on_building_upgraded = {
 	}
 }
 
+# Executed when a new heir is appointed
+# This = Heir
+on_new_heir = {
+	events = {
+		leader.200		# New Heir appointed, grant traits and select class.
+	}
+}
+
 # Leader death effects
 # This = Country
 # From = Leader
@@ -594,8 +604,6 @@ on_leader_spawned = {
 		tec_leaders.3						# Call tec_leader_starting_actions
 
 		tec_leaders.10001 					# make gestalt leaders gestalt
-
-		tec_ethic_elitist.10				# Elitist leader effect
 
 		#tec_tradition.720					# Invention tradition nuclear geniality
 
@@ -619,8 +627,6 @@ on_leader_level_up = {
 		# Paths
 		tec_psionic_path.600				# Psionic leader trait handler
 		tec_biopsionic_path.20099			# Biopsionic knowledge transfer trait
-
-		#antidesync_evolved.1002				# Leader checkup for level differences
 	}
 }
 
