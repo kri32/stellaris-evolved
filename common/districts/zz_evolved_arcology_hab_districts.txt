@@ -161,6 +161,10 @@ district_tec_hab_arcology_trade = {
 		}
 	}
 
+	allow = {
+		tec_ai_allow_trade_building = yes
+	}
+
 	conversion_ratio = 0.75
 	inline_script = districts/convert_to/tec_trade_districts
 	inline_script = districts/convert_to/tec_generator_districts

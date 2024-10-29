@@ -48,6 +48,14 @@ automate_ai_manage_jobs = {
 			}
 		# /
 		# Amenities Regular
+			anti_clerk_reduce = {
+				available = {
+					tec_can_reduce_job_further = { job = tec_ai_anti_clerk }
+				}
+				job = tec_ai_anti_clerk
+				amount = -100
+			}
+
 			clerk_reduce = {
 				available = {
 					tec_can_reduce_job_further = { job = clerk }

@@ -26,7 +26,7 @@ tec_cui_hoarder_withdraw_all = {
 				inline_script = {
 					script = iterators/tec_iterate_hoarder_resource
 					code = "
-						tec_hoarders_deposit_max_resource_V2 = { resource = $resource$ }
+						tec_hoarders_withdraw_resource = { resource = $resource$ }
 					"
 				}
 			}
@@ -52,7 +52,7 @@ tec_cui_hoarder_deposit_all = {
 				inline_script = {
 					script = iterators/tec_iterate_hoarder_resource
 					code = "
-						tec_hoarders_withdraw_resource = { resource = $resource$ }
+						tec_hoarders_deposit_max_resource_V2 = { resource = $resource$ }
 					"
 				}
 			}

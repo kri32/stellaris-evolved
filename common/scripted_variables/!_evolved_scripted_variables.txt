@@ -412,6 +412,11 @@
 @Edict2Cost = 20
 @Edict3Cost = 30
 @ambitionCost = 75
+@campaignCost = 15
+@hiveFood = 15
+@tec_zro_edict_cost = 0.5
+@tec_strategic_cheap_edict_cost = 0.5
+@tec_strategic_edict_cost = 1
 
 @tec_basic_auth_swap = 5
 @tec_advanced_auth_swap = 10

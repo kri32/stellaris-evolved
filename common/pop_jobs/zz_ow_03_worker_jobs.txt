@@ -121,30 +121,13 @@ clerk = {
 		inline_script = jobs/resources/tec_franchise_headquarters_overlord_resources
 	}
 
-	#planet_modifier = {	# Caelum	- JUST NO!
-	#	trade_value_mult = 0.01
-	#}
 
 	triggered_planet_modifier = {
-		potential = {
-			# NOTE: this is to disable production for disabled job to fix AI forecasting
-			OR = {
-				exists = this
-				root = {
-					owner = {
-						is_ai = no
-					}
-				}
-			}
-		}
 		trade_value_add = 3
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
 	}
 
 	triggered_planet_modifier = {
-		potential = {
-			always = yes
-		}
 		planet_amenities_add = 3
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}

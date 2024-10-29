@@ -24,7 +24,6 @@ ai_unobtainium_job = {
 	}
 }
 
-
 tec_hedonist = {
 	icon = fe_hedonist
 	category = tec_hedonists

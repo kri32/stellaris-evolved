@@ -1073,7 +1073,25 @@
 			society_research = 1
 			engineering_research = 1
 		}
+
+		inline_script = {
+			script = buildings/tec_aibait
+			trigger = "
+				exists = planet
+				planet = {
+					uses_district_set = habitat
+				}
+				exists = solar_system
+				solar_system = {
+					check_variable_arithmetic = {
+						which = value:tec_count_subhabitats|SCIENCE|yes|
+						value >= 1
+					}
+				}
+			"
+		}
 	}
+
 	building_research_lab_2 = {
 		base_buildtime = @b2_time
 		can_build = no

@@ -25,6 +25,8 @@ tec_leader_starting_actions = {
 		tec_leaders_replace.cyber_22
 
 		tec_aiauth.25
+
+		tec_ethic_elitist.10					# elitist effect
 	}
 }
 

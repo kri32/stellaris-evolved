@@ -4868,6 +4868,10 @@
 			}
 		}
 
+		allow = {
+			tec_ai_allow_toxic_bath = yes
+		}
+
 		convert_to = {
 			building_toxic_bath
 			building_toxic_bath_hive
@@ -4910,13 +4914,9 @@
 				}
 			}
 		}
+
 		allow = {
-			owner = {
-				OR = {
-					is_ai = no
-					prev = { has_any_industry_district = yes }
-				}
-			}
+			tec_ai_allow_toxic_bath = yes
 		}
 
 		convert_to = {
@@ -4962,6 +4962,10 @@
 					owner = { has_toxic_baths = yes }
 				}
 			}
+		}
+
+		allow = {
+			tec_ai_allow_toxic_bath = yes
 		}
 
 		convert_to = {

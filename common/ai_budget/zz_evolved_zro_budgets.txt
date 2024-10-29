@@ -1,0 +1,114 @@
+tec_zro_expenditure_blockers = {	# extremehigh and priority because psionics
+    resource = sr_zro
+    type = expenditure
+    category = deposit_blockers
+
+    potential = {
+        resource_stockpile_compare = {
+            resource = sr_zro value >= 100
+        }
+    }
+
+    weight = {
+        weight = 0.5
+    }
+
+    desired_max = {
+        base = 200
+    }
+}
+
+tec_zro_expenditure_edicts_biopsi = {
+    resource = sr_zro
+    type = expenditure
+    category = edicts
+
+    potential = {
+        has_country_flag = tec_biopsionic_path_finished
+        OR = {
+            has_monthly_income = { resource = sr_zro value > 0 }
+            has_country_resource = { type = sr_zro amount >= 100 }
+        }
+        NOT = { has_edict = tec_biopsionic_convergence_edict }
+    }
+
+    desired_min = {
+        base = 100
+    }
+}
+
+zro_upkeep_planets = {
+    resource = sr_zro
+    type = upkeep
+    category = planets
+
+    potential = {
+        always = yes
+    }
+
+    weight = {
+        weight = 0.6
+    }
+}
+
+zro_upkeep_edicts = {
+    resource = sr_zro
+    type = upkeep
+    category = edicts
+
+    potential = {
+        always = yes
+    }
+
+    weight = {
+        base = 0.25
+    }
+}
+
+
+tec_zro_expenditure_edicts = {
+    resource = sr_zro
+    type = expenditure
+    category = edicts
+
+    potential = {
+        always = yes
+    }
+
+    weight = {
+        weight = 0.2
+    }
+
+    desired_min = {
+        base = 0
+    }
+
+    desired_max = {
+        base = @tec_zro_edict_cost
+        multiply = value:edict_size_effect
+        multiply = 2
+    }
+}
+
+tec_zro_expenditure_leaders = {
+    resource = sr_zro
+    type = expenditure
+    category = leaders
+
+    potential = {
+        any_owned_leader = {
+            check_modifier_value = {
+                modifier = leaders_resources_sr_zro_upkeep_add
+                value > 0
+            }
+        }
+    }
+
+    weight = {
+        weight = 0.2
+    }
+
+    desired_min = {
+        base = 0.25
+    }
+}

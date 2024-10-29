@@ -164,6 +164,24 @@ defined_text = {
 }
 
 defined_text = {
+	name = tec_debug_leader_flag_tec_elitist_trait
+	text = {
+		trigger = {
+			has_leader_flag = tec_elitist_trait_yes
+		}
+		localization_key = tec_debug_yes_acquired
+	}
+	text = {
+		trigger = {
+			has_leader_flag = tec_elitist_trait
+			NOT = { has_leader_flag = tec_elitist_trait_yes }
+		}
+		localization_key = tec_debug_yes_run
+	}
+	default = tec_debug_no
+}
+
+defined_text = {
 	name = tec_debug_leader_flag_tec_patronage_age
 	text = {
 		trigger = {
@@ -236,6 +254,35 @@ defined_text = {
 			has_leader_flag = tec_leader_trait_limited_cyborg_trait
 		}
 		localization_key = tec_debug_yes
+	}
+	default = tec_debug_no
+}
+
+
+defined_text = {
+	name = tec_debug_leader_flag_tec_aiauth_ascension_trait
+	text = {
+		trigger = {
+			tec_is_aiauth_node = yes
+			OR = {
+				is_ruler = yes
+				tec_is_aiauth_councilor_node = no
+			}
+			has_leader_flag = tec_aiauth_ascension_trait
+		}
+		localization_key = tec_debug_yes
+	}
+	text = {
+		trigger = {
+			OR = {
+				tec_is_aiauth_node = no
+				AND = {
+					tec_is_aiauth_councilor_node = yes
+					is_ruler = no
+				}
+			}
+		}
+		localization_key = tec_debug_na
 	}
 	default = tec_debug_no
 }

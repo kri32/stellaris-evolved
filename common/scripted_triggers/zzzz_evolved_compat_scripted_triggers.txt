@@ -283,7 +283,7 @@ has_ascended_capital = {
 				# Evolved
 				has_building = building_tec_old_machine_imperial_capital
 				# ACOT
-				has_building = building_ae_ancient_control_center
+				has_building = building_acot_ae_ancient_control_center
 				has_building = building_phanon_tower
 				# AOT
 				has_building = building_stellarite_control_center
@@ -307,7 +307,7 @@ has_ascended_capital = {
 				# has_building = building_tec_bio_imperial_capital
 				# has_building = building_tec_kohn_imperial_capital
 				# ACOT
-				has_building = building_ae_ancient_palace
+				has_building = building_acot_ae_ancient_palace
 				has_building = building_phanon_tower
 				# AOT
 				has_building = building_stellarite_palace

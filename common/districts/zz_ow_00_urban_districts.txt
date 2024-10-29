@@ -1139,6 +1139,7 @@ district_srw_commercial = {
 
 	allow = {
 		tec_disallow_urban_districts = no
+		tec_ai_allow_trade_building = yes
 	}
 
 	inline_script = districts/convert_to/tec_trade_districts

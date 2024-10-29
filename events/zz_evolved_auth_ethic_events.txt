@@ -533,25 +533,73 @@
 		is_triggered_only = yes
 
 		trigger = {
-			is_elitist = yes
+			tec_country_leader_gets_starting_actions = yes
+			from = {
+				tec_leader_gets_starting_actions = { flag = tec_elitist_trait }
+				tec_leader_first_staring_actions_done = no
+				OR = {
+					owner = {
+						is_elitist = yes
+					}
+					creator = {
+						is_elitist = yes
+					}
+				}
+			}
 		}
 
 		immediate = { # % of positive trait
 			from = {
 				random_list = {
 					75 = {
-						
+						modifier = {
+							factor = 0
+							is_ruler = yes
+						}
 					}
 					25 = {
 						modifier = {
 							factor = 3
-							owner = {
-								has_ethic = ethic_fanatic_elitist
+							OR = {
+								owner = {
+									has_ethic = ethic_fanatic_elitist
+								}
+								creator = {
+									has_ethic = ethic_fanatic_elitist
+								}
 							}
 						}
-						add_trait_no_notify = "random_common"
+						if = {
+							limit = {
+								tec_can_only_get_council_trait = yes
+							}
+							prev = {
+								set_country_flag = tec_force_councilor_traits
+							}
+							add_trait_no_notify = "random_common"
+							prev = {
+								remove_country_flag = tec_force_councilor_traits
+							}
+						}
+						if = {
+							limit = {
+								tec_can_only_get_normal_trait = yes
+							}
+							prev = {
+								set_country_flag = tec_force_normal_traits
+							}
+							add_trait_no_notify = "random_common"
+							prev = {
+								remove_country_flag = tec_force_normal_traits
+							}
+						}
+						else = {
+							add_trait_no_notify = "random_common"
+						}
+						set_leader_flag = tec_elitist_trait_yes
 					}
 				}
+				set_leader_flag = tec_elitist_trait
 			}
 		}
 	}
