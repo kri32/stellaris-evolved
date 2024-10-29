@@ -29,6 +29,10 @@ first_contact_event = {
 				text = story.101.desc.fruitful
 				hidden:owner = { tec_is_fruitful_empire = yes }
 			}
+			success_text = {
+				text = first_contact_critters.25.desc.primal_calling
+				hidden:owner = { has_origin = origin_primal_calling }
+			}
 		}
 	}
 	desc = {
@@ -51,6 +55,17 @@ first_contact_event = {
 
 	after = {
 		set_site_progress_locked = no
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = grand_archive.200
+					scopes = {
+						from = event_target:amoeba_country
+						fromfrom = root.solar_system
+					}
+				}
+			}
+		}
 	}
 
 	option = {
@@ -69,6 +84,7 @@ first_contact_event = {
 				modifier = amoeba_hunting_buff
 				days = -1
 			}
+			increase_hunted_fauna_count = yes
 		}
 		custom_tooltip = story.101.aa.amoebahunt
 		finish_first_contact_effect = yes
@@ -145,7 +161,6 @@ first_contact_event = {
 	desc = {
 		trigger = {
 			hidden:owner = {
-				NOT = { tec_is_fruitful_empire = yes }
 				switch = {
 					trigger = has_ethic
 					ethic_fanatic_xenophile = { text = story.201.desc.phile }
@@ -153,20 +168,20 @@ first_contact_event = {
 					ethic_fanatic_militarist = { text = story.201.desc.milit }
 					ethic_fanatic_pacifist = { text = story.201.desc.pacif }
 					ethic_xenophile = { text = story.201.desc.phile }
-					ethic_xenophobe = { text = story.201.desc.phobe}
+					ethic_xenophobe = { text = story.201.desc.phobe }
 					ethic_militarist = { text = story.201.desc.milit }
 					ethic_pacifist = { text = story.201.desc.pacif }
-					ethic_gestalt_empathy = { text = story.201.desc.tec_gestalt_empathy }
 					default = { text = story.201.desc }
 				}
 			}
-		}
-	}
-	desc = {
-		text = story.201.desc.fruitful
-		trigger = {
-			hidden:owner = {
-				tec_is_fruitful_empire = yes
+			text = newline
+			success_text = {
+				text = story.201.desc.fruitful
+				hidden:owner = { tec_is_fruitful_empire = yes }
+			}
+			success_text = {
+				text = first_contact_critters.35.desc.primal_calling
+				hidden:owner = { has_origin = origin_primal_calling }
 			}
 		}
 	}
@@ -197,6 +212,7 @@ first_contact_event = {
 				modifier = crystal_hunting_buff
 				days = -1
 			}
+			increase_hunted_fauna_count = yes
 		}
 		custom_tooltip = story.201.aa.crystalhunt
 	}
@@ -221,6 +237,7 @@ first_contact_event = {
 				OR = {
 					values_others = yes
 					is_pacifist = yes
+					is_beastmasters_empire = yes
 				}
 			}
 		}
@@ -238,5 +255,16 @@ first_contact_event = {
 	after = {
 		finish_first_contact_effect = yes
 		set_site_progress_locked = no
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = grand_archive.200
+					scopes = {
+						from = event_target:crystal_country
+						fromfrom = root.solar_system
+					}
+				}
+			}
+		}
 	}
 }

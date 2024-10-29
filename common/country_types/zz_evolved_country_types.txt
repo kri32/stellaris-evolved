@@ -49,7 +49,6 @@ default_exocolonist = {
 		needs_colony = no
 		auto_delete = yes
 	}
-	
 }
 
 default_exocolonist_ai = {	#AI
@@ -76,7 +75,4 @@ default_exocolonist_ai = {	#AI
 		needs_colony = no
 		auto_delete = yes
 	}
-	
 }
-
-

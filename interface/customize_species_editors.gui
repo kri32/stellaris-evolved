@@ -1100,38 +1100,38 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-				name = "selected"
-				font = "malgun_goth_24"
-				position = { x = 720 y = 85 }
-				maxWidth = 200
-				maxHeight = 20
-				text =	 "RULER_SELECTED_TRAITS"
-				format = left
-				fixedSize = yes
+			name = "selected"
+			font = "malgun_goth_24"
+			position = { x = 720 y = 85 }
+			maxWidth = 200
+			maxHeight = 20
+			text =	 "RULER_SELECTED_TRAITS"
+			format = left
+			fixedSize = yes
 		}
 
 		instantTextBoxType = {
-				name = "trait_points_lables"
-				font = "cg_16b"
-				position = { x = 410 y = 88 }
-				maxWidth = 265
-				maxHeight = 36
-				text =	 "POINTS_LEFT"
-				format = right
-				fixedsize = yes
-				alwaysTransparent = yes
+			name = "trait_points_lables"
+			font = "cg_16b"
+			position = { x = 410 y = 88 }
+			maxWidth = 265
+			maxHeight = 36
+			text =	 "POINTS_LEFT"
+			format = right
+			fixedsize = yes
+			alwaysTransparent = yes
 		}
 
 		instantTextBoxType = {
-				name = "trait_points"
-				font = "malgun_goth_24"
-				position = { x = 685 y = 82 }
-				maxWidth = 30
-				maxHeight = 36
-				text =	 "12"
-				format = left
-				alwaysTransparent = yes
-				text_color_code = "G"
+			name = "trait_points"
+			font = "malgun_goth_24"
+			position = { x = 685 y = 82 }
+			maxWidth = 30
+			maxHeight = 36
+			text =	 "12"
+			format = left
+			alwaysTransparent = yes
+			text_color_code = "G"
 		}
 
 		containerWindowType = {

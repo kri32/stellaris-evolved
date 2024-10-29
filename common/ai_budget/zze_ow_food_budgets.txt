@@ -1,3 +1,5 @@
+# common\ai_budget\zze_ow_food_budgets.txt
+
 food_expenditure_buffer = { # Buffer, will not be spent
 	resource = food
 	type = expenditure

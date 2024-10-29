@@ -19,6 +19,7 @@ can_use_invalid_technology = no
 can_receive_envoys = yes
 #intel_effects_surveyed = no
 ownership_limits = default
+do_critters_age = yes
 
 trade_routes_available = {
 	tec_uses_trade_value = yes

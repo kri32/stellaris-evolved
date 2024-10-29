@@ -933,6 +933,34 @@ country_event = {	# Storm Chasers - Adds the Storm Rider trait
 	}
 }
 
+country_event = {	# Treasure Hunters - Adds the Adventurous Spirit trait
+	id = tec_leaders_replace.109
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		tec_country_leader_gets_starting_actions = yes
+		from = { 
+			tec_leader_gets_starting_actions = { flag = tec_treasure_hunters_traits } 
+			tec_leader_first_staring_actions_done = no # called once, and only on new leaders
+		}
+		exists = owner
+		# VALID EMPIRE
+		has_origin = origin_treasure_hunters
+	}
+
+	immediate = {
+		set_country_flag = tec_force_allow_all_traits
+		from = {
+			set_leader_flag = ignore_autocracy_ruler_trait_restriction
+			add_trait_no_notify = leader_trait_adventurous_spirit
+			remove_leader_flag = ignore_autocracy_ruler_trait_restriction
+		}
+		remove_country_flag = tec_force_allow_all_traits
+	}
+}
+
 
 # New Leaders Get Cyborg Trait (Cybernetic Creed)
 # this: country

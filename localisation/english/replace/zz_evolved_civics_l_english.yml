@@ -2306,7 +2306,7 @@
 	civic_tec_hive_brood_overminds:0 "§G£tec_civic_ruler£§!Subservient Overminds"
 	civic_tec_hive_brood_overminds_noicon:0 "Subservient Overminds"
 	civic_tec_hive_brood_overminds_desc:0 "['concept_tec_brood_capital_civic', $concept_tec_brood_capital_civic$ - Control]\n\nThis collective derivates a relatively high amount of control power to specificially control drones, which have the task to control all the lesser ones at a planetary scale. Generally this produces a remarked separation between castes of drones, conforming a strong but diversified collective."
-	civic_tec_hive_brood_overminds_tooltip:0 "$tec_loc_c_unlocks_job$ §H£job_tec_overmind_drone£ Overminds§!\n- £building£ Capital Buildings provide a single ['concept_tec_ruler_job_tec_overmind_drone_icon'].\n\n$tec_loc_c_unlocks_feature$ §H£unity£ Controlling Grasp§!\n- £job_patrol_drone£ §YAnti-Crime§! drones are twice as effective at reducing £crime£ §YDeviancy§!.\n\n$tec_loc_c_unlocks_feature$ §H£influence£ Hegemonic Influence§!\n- Can use ['concept_hegemony_federation'] Federation Type."
+	civic_tec_hive_brood_overminds_tooltip:0 "$tec_loc_c_unlocks_job$ §H£job_tec_overmind_drone£ Overminds§!\n- £building£ Capital Buildings provide a single ['concept_tec_ruler_job_tec_overmind_drone_icon'], which boost $tec_loc_job_output$ and provide stability, increased by §Y$tec_loc_capital_tier$§! and §Y$tec_loc_planet_ascension_plural$§!.\n\n$tec_loc_c_unlocks_feature$ §H£unity£ Controlling Grasp§!\n- £job_patrol_drone£ §YAnti-Crime§! drones are twice as effective at reducing £crime£ §YDeviancy§!.\n\n$tec_loc_c_unlocks_feature$ §H£influence£ Hegemonic Influence§!\n- Can use ['concept_hegemony_federation'] Federation Type."
 	# Capitals add overminds, overmind changes its type based on colony type and boost jobs
 
 	civic_tec_hive_brood_overminds_cybernetic:0 "§G£tec_civic_ruler£§!Subservient Adjutants"
@@ -2318,7 +2318,7 @@
 	civic_tec_hive_brood_cerebrates:0 "§G£tec_civic_ruler£§!Controlling Cerebrates"
 	civic_tec_hive_brood_cerebrates_noicon:0 "Controlling Cerebrates"
 	civic_tec_hive_brood_cerebrates_desc:0 "['concept_tec_brood_capital_civic', $concept_tec_brood_capital_civic$ - Control]\n\nTO DO"
-	civic_tec_hive_brood_cerebrates_tooltip:0 "TO DO"
+	civic_tec_hive_brood_cerebrates_tooltip:0 "$tec_loc_c_unlocks_job$ §H£job_tec_brood_cerebrate_drone£ $job_tec_brood_cerebrate_drone_plural$§!\n- £building£ Capital Buildings provide §Yone§! ['concept_tec_ruler_job_tec_brood_cerabrate_drone_icon'], which produce and amplifies research, and generates $tec_loc_stability$.\n- Research boosters provide ['concept_tec_ruler_job_tec_brood_minor_cerebrate_drone_icon'] instead of regular research jobs, which serve as complex drone versions of £job_tec_brood_cerebrate_drone£ $job_tec_brood_cerebrate_drone_plural$, with the amount of jobs provided scaling with the §Y$tec_loc_planet_ascension_plural$§!.\n\n$tec_loc_c_unlocks_feature$ §H£society_research£ Gorging in Knowledge§!\n- Each §Y$tec_loc_technology$§! increases the production and effects of £job_tec_brood_cerebrate_drone£ $job_tec_brood_cerebrate_drone_plural$ and £job_tec_brood_minor_cerebrate_drone£ $job_tec_brood_minor_cerebrate_drone_plural$ jobs.\n"
 	# 1 High research/performance job, provided by a building - building type changes the type of cerebrate
 
 	civic_tec_hive_brood_cerebrates_cybernetic:0 "§G£tec_civic_ruler£§!Supervision Clusters"

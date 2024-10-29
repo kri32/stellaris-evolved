@@ -380,6 +380,7 @@
 				owner = {
 					add_resource = { food = 200 }
 				}
+				give_bio_repurposing_reward_on_organic_deposit_cleared = yes
 			}
 			if = {
 				limit = {
@@ -521,7 +522,12 @@
 
 		inline_script = deposits/environmental_architects_natural_blocker_modifier
 
-		inline_script = deposits/environmental_architects_natural_blocker_pops
+		on_cleared = {
+			hidden_effect = {
+				give_bio_repurposing_reward_on_organic_deposit_cleared = yes
+			}
+			planetscaper_pop_effect = yes
+		}
 
 		can_be_cleared = {
 			custom_tooltip = {
@@ -660,7 +666,12 @@
 
 		inline_script = deposits/environmental_architects_natural_blocker_modifier
 
-		inline_script = deposits/environmental_architects_natural_blocker_pops
+		on_cleared = {
+			hidden_effect = {
+				give_bio_repurposing_reward_on_organic_deposit_cleared = yes
+			}
+			planetscaper_pop_effect = yes
+		}
 
 		can_be_cleared = {
 			custom_tooltip = {
@@ -1069,10 +1080,14 @@
 			"
 		}
 
-
 		inline_script = deposits/environmental_architects_natural_blocker_modifier
 
-		inline_script = deposits/environmental_architects_natural_blocker_pops
+		on_cleared = {
+			hidden_effect = {
+				give_bio_repurposing_reward_on_organic_deposit_cleared = yes
+			}
+			planetscaper_pop_effect = yes
+		}
 
 		can_be_cleared = {
 			custom_tooltip = {
@@ -1440,6 +1455,12 @@
 		}
 
 		inline_script = deposits/environmental_architects_natural_blocker_modifier
+
+		on_cleared = {
+			hidden_effect = {
+				give_bio_repurposing_reward_on_organic_deposit_cleared = yes
+			}
+		}
 	}
 
 # /
@@ -1502,6 +1523,7 @@
 
 		on_cleared = {
 			hidden_effect = {
+				give_bio_repurposing_reward_on_organic_deposit_cleared = yes
 				# clear the variable that handled the bombardment event
 				change_variable = {
 					which = seed_bomb_blockers
@@ -1629,6 +1651,7 @@
 
 		on_cleared = {
 			hidden_effect = {
+				give_bio_repurposing_reward_on_organic_deposit_cleared = yes
 				# clear the variable that handled the bombardment event
 				change_variable = {
 					which = seed_bomb_blockers

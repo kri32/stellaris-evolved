@@ -1,3 +1,5 @@
+# events\!!_on_action_events_2.txt
+
 # - - - - - - - - - - - - - - - - - - - - - 
 # On_action Events OVERWRITE
 # - - - - - - - - - - - - - - - - - - - - - 
@@ -993,6 +995,13 @@ country_event = { # Random leader pool variations
 #country_event = {
 #	id = action.455
 
+# On country created, set up Imperial Ruler
+#country_event = {
+#	id = action.501
+
+# Remove Imperial Heir trait on changing away from Imperial authority.
+#country_event = {
+#	id = action.502
 
 # Strange Mood achievement
 #country_event = {

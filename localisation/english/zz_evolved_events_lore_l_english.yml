@@ -497,6 +497,7 @@ tecniactest.6.desc:0 "create a elysium"
 
 # Doomsday dumb
 tec_doomsday_economy:0 "Oh no, this will be terrible for the economy!"
+tec_doomsday_economy_aquatic:0 "This will affect the trout population... I Think"
 
 # Planetary unification fix
 

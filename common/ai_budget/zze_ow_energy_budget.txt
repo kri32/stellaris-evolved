@@ -1,3 +1,5 @@
+# common\ai_budget\zze_ow_energy_budget.txt
+
 energy_expenditure_deposit_blockers = {
 	resource = energy
 	type = expenditure

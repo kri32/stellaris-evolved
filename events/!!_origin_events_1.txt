@@ -809,6 +809,14 @@ planet_event = {
 			}
 			if = {
 				limit = {
+					owner = {
+						is_aquatic_species = yes
+					}
+				}
+				set_planet_flag = tec_doomsday_aquatic
+			}
+			if = {
+				limit = {
 					owner = { num_owned_planets = 1 }
 				}
 				set_planet_flag = doomsday_lost_everything
@@ -935,6 +943,32 @@ planet_event = {
 		
 		trigger = {
 			has_planet_flag = tec_doomsday_megacorp
+			NOT = {
+				has_planet_flag = tec_doomsday_aquatic
+			}
+		}
+	}
+	option = {
+		name = tec_doomsday_economy_aquatic
+		
+		trigger = {
+			has_planet_flag = tec_doomsday_megacorp
+			has_planet_flag = tec_doomsday_aquatic
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				OR = {
+					has_planet_flag = doomsday_lost_everything
+					has_planet_flag = doomsday_lost_some_pops
+					has_planet_flag = doomsday_lost_many_pops
+				}
+			}
+			event_target:doomsday_owner = {
+				give_specimen = { key = memorial_to_homeworld }
+			}
 		}
 	}
 }

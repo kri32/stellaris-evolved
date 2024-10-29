@@ -1,3 +1,5 @@
+# events\!!_distant_stars_events_2.txt
+
 namespace = distar
 
 # They are freed

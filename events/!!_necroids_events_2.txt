@@ -109,9 +109,6 @@ country_event = {
 	}
 }
 
-
-
-
 # Cordyceptic Drones
 # necroids.300
 

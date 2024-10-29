@@ -120,7 +120,6 @@ pop_faction_event = {
 	}
 }
 
-
 # factions.10
 
 # factions.11

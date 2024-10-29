@@ -365,11 +365,11 @@
  # /
  # Common traits
 	is_aquatic_species = {
-		has_trait = trait_aquatic
+		tec_is_aquatic_species = yes
 	}
 	tec_is_aquatic_species = {
 		OR = {
-			is_aquatic_species = yes
+			has_trait = trait_aquatic
 			has_trait = trait_tec_machine_aquatic
 			has_trait = trait_robot_aquatic
 			has_trait = trait_tec_advanced_aquatic
@@ -379,11 +379,11 @@
 	}
 	
 	is_zombie_species = {
-		has_trait = trait_zombie
+		tec_is_zombie_species = yes
 	}
 	tec_is_zombie_species = {
 		#OR = {
-			is_zombie_species = yes
+			has_trait = trait_zombie
 			#has_trait = trait_tec_cybernetic_zombie
 			#has_trait = trait_tec_biological_zombie
 			#has_trait = trait_tec_psychic_zombie

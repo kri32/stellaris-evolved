@@ -2,7 +2,7 @@
 
 namespace = origin
 
-		# Evolved review non hiveminds
+		# TODO Evolved review non hiveminds
 #Add ToL to new colonies
 planet_event = {
 	id = origin.3001

@@ -2,7 +2,6 @@
 
 namespace = game_start
 
-
 country_event = {
 	id = game_start.33
 	hide_window = yes
