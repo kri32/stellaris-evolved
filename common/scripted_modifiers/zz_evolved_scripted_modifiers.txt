@@ -784,3 +784,9 @@ tec_artifice_final_1_marker = {
 	#	#modifier:tec_test_trait_selfbuff
 	#}
 # /
+
+tec_anti_clerk_flag = {
+	icon = mod_job_clerk_add
+	neutral = yes
+	category = planet
+}

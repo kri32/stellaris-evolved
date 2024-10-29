@@ -129,9 +129,6 @@
  
 		# Crisis
 		is_megastructure_type = crisis_sphere_0
-		is_megastructure_type = crisis_sphere_1
-		is_megastructure_type = crisis_sphere_2
-		is_megastructure_type = crisis_sphere_3
 		is_megastructure_type = crisis_sphere_4
 		is_megastructure_type = crisis_sphere_ruined
 

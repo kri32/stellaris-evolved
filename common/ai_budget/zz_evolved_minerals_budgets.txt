@@ -1,0 +1,110 @@
+
+tec_minerals_expenditure_starbases_low = {
+    resource = minerals
+    type = expenditure
+    category = starbases
+
+    potential = {
+        resource_stockpile_compare = { resource = minerals value < 1000 }
+        tec_is_biohive = yes
+        is_lithoid_empire = yes
+        NOR = {
+            tec_uses_food_buildings = yes
+            tec_uses_food_buildings_smol = yes
+        }
+    }
+
+    weight = {
+        weight = 0.3
+    }
+}
+
+tec_minerals_expenditure_starbases_med = {
+    resource = minerals
+    type = expenditure
+    category = starbases
+
+    potential = {
+        resource_stockpile_compare = { resource = minerals value >= 1000 }
+        resource_stockpile_compare = { resource = minerals value < 2000	}
+        tec_is_biohive = yes
+        is_lithoid_empire = yes
+        tec_uses_food_buildings = no
+    }
+
+    weight = {
+        weight = 0.4
+    }
+}
+
+tec_minerals_expenditure_starbases_high = {
+    resource = minerals
+    type = expenditure
+    category = starbases
+
+    potential = {
+        resource_stockpile_compare = { resource = minerals value >= 2000 }
+        tec_is_biohive = yes
+        is_lithoid_empire = yes
+        tec_uses_food_buildings = no
+    }
+
+    weight = {
+        weight = 0.5
+    }
+}
+
+
+tec_minerals_upkeep_edicts_campaigns = {
+	resource = minerals
+	type = upkeep
+	category = edicts
+
+	potential = {
+		has_resource = {
+			type = minerals
+			amount > 2000
+		}
+		AND = {
+			is_gestalt = yes
+			is_lithoid = yes
+			has_technology = tech_planetary_unification
+		}
+	}
+
+	weight = {
+		weight = 0.07
+	}
+}
+
+tec_minerals_expenditure_edict_campaigns = {
+    resource = minerals
+    type = expenditure
+    category = edicts
+
+    potential = {
+        has_resource = {
+            type = minerals
+            amount > 2000
+        }
+        AND = {
+            is_gestalt = yes
+            is_lithoid = yes
+            has_technology = tech_planetary_unification
+        }
+    }
+
+    weight = {
+        weight = 0.2
+    }
+
+    desired_min = {
+        base = 0
+    }
+
+    desired_max = {
+        base = @hiveFood
+        multiply = value:edict_size_effect
+        multiply = 2
+    }
+}

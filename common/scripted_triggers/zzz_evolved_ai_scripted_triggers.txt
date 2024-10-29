@@ -411,6 +411,11 @@ tec_ai_allow_trade_building = {
 			has_trade_designation = yes
 			num_unemployed > 3
 		}
+		check_variable_arithmetic = {
+			which = modifier:tec_anti_clerk_flag
+			value = 0
+		}
+
 	}
 	else = {
 		hidden_trigger = { always = yes }
@@ -1975,5 +1980,25 @@ tec_ai_can_increase_artisan_job = {
 		}
 		has_industrial_designation = yes
 		has_factory_designation = yes
+	}
+}
+
+tec_ai_allow_toxic_bath = {
+	if = {
+		limit = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+		}
+		check_variable_arithmetic = {
+			which = value:industrial_districts_value
+			value >= 6
+		}
+	}
+	else = {
+		hidden_trigger = {
+			always = yes
+		}
 	}
 }

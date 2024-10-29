@@ -4988,6 +4988,61 @@ tec_is_mega_shipyard = {
 	}
 }
 
+
+tec_is_dyson_sphere = {
+	OR = {
+		is_megastructure_type = dyson_sphere_1
+		is_megastructure_type = dyson_sphere_2
+		is_megastructure_type = dyson_sphere_3
+		is_megastructure_type = dyson_sphere_4
+		is_megastructure_type = dyson_sphere_5
+		is_megastructure_type = dyson_sphere_restored
+		is_megastructure_type = dyson_sphere_disco
+		is_megastructure_type = dyson_sphere_disco_restored
+	}
+}
+
+tec_is_science_nexus = {
+	OR = {
+		is_megastructure_type = think_tank_1
+		is_megastructure_type = think_tank_2
+		is_megastructure_type = think_tank_3
+		is_megastructure_type = think_tank_4
+		is_megastructure_type = think_tank_restored
+	}
+}
+
+tec_is_mega_art_installation = {
+	OR = {
+		is_megastructure_type = mega_art_installation_1
+		is_megastructure_type = mega_art_installation_2
+		is_megastructure_type = mega_art_installation_3
+		is_megastructure_type = mega_art_installation_4
+		is_megastructure_type = mega_art_installation_restored
+		is_megastructure_type = mega_art_installation_restored_2
+	}
+}
+
+tec_is_matter_decompressor = {
+	OR = {
+		is_megastructure_type = matter_decompressor_1
+		is_megastructure_type = matter_decompressor_2
+		is_megastructure_type = matter_decompressor_3
+		is_megastructure_type = matter_decompressor_4
+		is_megastructure_type = matter_decompressor_restored
+	}
+}
+
+tec_is_crisis_sphere = {
+	OR = {
+		is_megastructure_type = crisis_sphere_1
+		is_megastructure_type = crisis_sphere_2
+		is_megastructure_type = crisis_sphere_3
+		is_megastructure_type = crisis_sphere_4
+	}
+}
+
+
 tec_leader_is_gestalt = {
 	OR = {
 		has_ethic = ethic_gestalt_consciousness

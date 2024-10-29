@@ -1,11 +1,5 @@
-@campaignCost = 15
-@hiveFood = 15
 @campaignDuration = -1
 @EdictDuration = -1
-
-@Edict1Cost = 10
-@Edict2Cost = 20
-@Edict3Cost = 30
 
 education_campaign = {
 	length = @campaignDuration
@@ -34,10 +28,50 @@ education_campaign = {
 	ai_weight = {
 		weight = @EdictLowPrio
 		modifier = {
+			mult = @EdictLowPrio
+			tec_is_aiauth_empire = yes
+		}
+		modifier = {
 			factor = 0
 			exists = ruler
 			ruler = {
 				tec_leader_is_at_max_skill = yes
+			}
+		}
+	}
+}
+
+recycling_campaign = {
+	length = @campaignDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = campaigns
+		cost = {
+			energy = @campaignCost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = @campaignCost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_pops_consumer_goods_upkeep_mult = -0.10
+	}
+
+	potential = {
+		is_gestalt = no
+		has_technology = tech_planetary_unification
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+		modifier = {
+			weight = @EdictMedPrio
+			has_monthly_income = {
+				resource = consumer_goods
+				value < 0
 			}
 		}
 	}
@@ -187,6 +221,40 @@ war_drone_campaign = {
 	}
 }
 
+terraforming_gas = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			exotic_gases = @tec_strategic_cheap_edict_cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			exotic_gases = @tec_strategic_cheap_edict_cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		terraform_speed_mult = 0.50
+	}
+
+	prerequisites = {
+		"tech_terrestrial_sculpting"
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			any_planet_within_border = {
+				is_terraforming = yes
+			}
+		}
+	}
+}
+
 fuel_gases = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
@@ -195,11 +263,11 @@ fuel_gases = {
 	resources = {
 		category = ship_edicts
 		cost = {
-			exotic_gases = 1
+			exotic_gases = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			exotic_gases = 1
+			exotic_gases = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -234,11 +302,11 @@ shield_gases = {
 	resources = {
 		category = ship_edicts
 		cost = {
-			exotic_gases = 1
+			exotic_gases = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			exotic_gases = 1
+			exotic_gases = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -265,6 +333,38 @@ shield_gases = {
 	}
 }
 
+clearing_motes = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			volatile_motes = @tec_strategic_cheap_edict_cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			volatile_motes = @tec_strategic_cheap_edict_cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		OR = {
+			has_resource = { type = volatile_motes amount > 0 }
+			has_edict = clearing_motes
+		}
+	}
+
+	modifier = {
+		deposit_blockers_cost_mult = -0.25
+		planet_clear_blocker_speed_mult = 0.25
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
 motes_kinetic = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
@@ -273,11 +373,11 @@ motes_kinetic = {
 	resources = {
 		category = ship_edicts
 		cost = {
-			volatile_motes = 1
+			volatile_motes = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			volatile_motes = 1
+			volatile_motes = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -310,11 +410,11 @@ motes_explosives = {
 	resources = {
 		category = ship_edicts
 		cost = {
-			volatile_motes = 1
+			volatile_motes = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			volatile_motes = 1
+			volatile_motes = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -341,7 +441,6 @@ motes_explosives = {
 	}
 }
 
-
 motes_armor = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
@@ -350,11 +449,11 @@ motes_armor = {
 	resources = {
 		category = ship_edicts
 		cost = {
-			volatile_motes = 1
+			volatile_motes = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			volatile_motes = 1
+			volatile_motes = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -381,6 +480,39 @@ motes_armor = {
 	}
 }
 
+crystalline_sensors = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			rare_crystals = @tec_strategic_cheap_edict_cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			rare_crystals = @tec_strategic_cheap_edict_cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		OR = {
+			has_resource = { type = rare_crystals amount > 0 }
+			has_edict = crystalline_sensors
+		}
+	}
+
+	modifier = {
+		ship_sensor_range_add = 1
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+
 crystal_focus = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
@@ -388,11 +520,11 @@ crystal_focus = {
 	resources = {
 		category = ship_edicts
 		cost = {
-			rare_crystals = 1
+			rare_crystals = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			rare_crystals = 1
+			rare_crystals = @tec_strategic_edict_cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -426,11 +558,11 @@ sight_beyond_sight = {
 	resources = {
 		category = rare_edicts
 		cost = {
-			sr_zro = 0.5
+			sr_zro = @tec_zro_edict_cost
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			sr_zro = 0.5
+			sr_zro = @tec_zro_edict_cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -462,11 +594,11 @@ zro_catalysis_utopia = {
 	resources = {
 		category = rare_edicts
 		cost = {
-			sr_zro = 0.5
+			sr_zro = @tec_zro_edict_cost
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			sr_zro = 0.5
+			sr_zro = @tec_zro_edict_cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -490,12 +622,48 @@ zro_catalysis_utopia = {
 	ai_weight = {
 		weight = 0
 		modifier = {
-			weight = @EdictMedPrio
+			weight = @EdictHighPrio
 			species = { tec_is_total_psionic_species = yes}
 		}
 	}
 }
 
+
+zro_catalysis_non_utopia = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			sr_zro = @tec_zro_edict_cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			sr_zro = @tec_zro_edict_cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		exists = federation
+		federation = {
+			has_federation_perk = zro_catalysis_1
+		}
+		has_utopia = no
+		OR = {
+			has_resource = { type = sr_zro amount > 0 }
+			has_edict = zro_catalysis_non_utopia
+		}
+	}
+
+	modifier = {
+		planet_jobs_organics_produces_mult = 0.1
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}
 
 masters_writings_war = {
 	length = @EdictDuration

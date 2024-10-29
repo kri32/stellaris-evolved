@@ -151,6 +151,10 @@ district_tec_elysium_arcology_commercial = {
 		tec_is_unspecced_elysium = no
 	}
 
+	allow = {
+		tec_ai_allow_trade_building = yes
+	}
+
 	conversion_ratio = 0.75
 	inline_script = districts/convert_to/tec_trade_districts
 	inline_script = districts/convert_to/tec_generator_districts

@@ -576,6 +576,16 @@
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
+	tec_job_anti_clerk_count = {
+		add = modifier:job_clerk_add
+		modifier = {
+			subtract = value:tec_jobs_value|JOB|clerk|
+		}
+		add = modifier:tec_anti_clerk_flag
+		subtract = trigger:num_unemployed
+		add = 1
+	}
+
 	# Hired
 
 	tec_hired_job_trade_add = {

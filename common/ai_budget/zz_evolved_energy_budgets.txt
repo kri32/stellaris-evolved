@@ -1,0 +1,419 @@
+
+# Energy for buildings
+tec_energy_expenditure_planets_low = {
+    resource = energy
+    type = expenditure
+    category = planets
+
+    potential = {
+        resource_stockpile_compare = { resource = energy value < 1000 }
+    }
+
+    weight = {
+        weight = 0.6
+    }
+}
+
+tec_energy_expenditure_planets_med = {
+    resource = energy
+    type = expenditure
+    category = planets
+
+    potential = {
+        resource_stockpile_compare = { resource = energy value >= 1000 }
+        resource_stockpile_compare = { resource = energy value < 2000	}
+    }
+
+    weight = {
+        weight = 0.6
+    }
+}
+
+tec_energy_expenditure_planets_high = {
+    resource = energy
+    type = expenditure
+    category = planets
+
+    potential = {
+        resource_stockpile_compare = { resource = energy value >= 2000 }
+    }
+
+    weight = {
+        weight = 0.4
+    }
+}
+
+# Machine digitalization
+tec_energy_expenditure_starbases_low = {
+    resource = food
+    type = expenditure
+    category = starbases
+
+    potential = {
+        resource_stockpile_compare = { resource = energy value < 1000 }
+        tec_uses_energy_buildings = yes
+    }
+
+    weight = {
+        weight = 0.3
+    }
+}
+
+tec_energy_expenditure_starbases_med = {
+    resource = energy
+    type = expenditure
+    category = starbases
+
+    potential = {
+        resource_stockpile_compare = { resource = energy value >= 1000 }
+        resource_stockpile_compare = { resource = energy value < 2000	}
+        tec_uses_energy_buildings = yes
+    }
+
+    weight = {
+        weight = 0.4
+    }
+}
+
+tec_energy_expenditure_starbases_high = {
+    resource = energy
+    type = expenditure
+    category = starbases
+
+    potential = {
+        resource_stockpile_compare = { resource = energy value >= 2000 }
+        tec_uses_energy_buildings = yes
+    }
+
+    weight = {
+        weight = 0.5
+    }
+}
+
+tec_energy_expenditure_stations_low = {
+    resource = energy
+    type = expenditure
+    category = stations
+
+    potential = {
+        tec_uses_energy_buildings = yes
+        resource_stockpile_compare = { resource = energy value < 1000 }
+    }
+
+    weight = {
+        weight = 0.2
+    }
+}
+
+tec_energy_expenditure_stations_med = {
+    resource = energy
+    type = expenditure
+    category = stations
+
+    potential = {
+        tec_uses_energy_buildings = yes
+        resource_stockpile_compare = { resource = energy value >= 1000 }
+        resource_stockpile_compare = { resource = energy value < 2000 }
+    }
+
+    weight = {
+        weight = 0.15
+    }
+}
+
+tec_energy_expenditure_stations_high = {
+    resource = energy
+    type = expenditure
+    category = stations
+
+    potential = {
+        tec_uses_energy_buildings = yes
+        resource_stockpile_compare = { resource = energy value >= 2000 }
+    }
+
+    weight = {
+        weight = 0.1
+    }
+}
+
+
+
+tec_energy_expenditure_decisions_high = {
+    resource = energy
+    type = expenditure
+    category = decisions
+
+    potential = {
+        # only consider these kinds of decisions when "wealthy"
+        has_resource = {
+            type = energy
+            amount > 5000
+        }
+    }
+
+    weight = {
+        weight = 0.2
+    }
+}
+
+
+tec_energy_upkeep_edicts_campaigns = {
+    resource = energy
+    type = upkeep
+    category = edicts
+
+    potential = {
+        has_resource = {
+            type = energy
+            amount > 1000
+        }
+        OR = {
+            AND = {
+                is_gestalt = no
+                has_technology = tech_planetary_unification
+            }
+            AND = {
+                is_machine_empire = yes
+                has_technology = tech_planetary_unification
+            }
+        }
+    }
+
+    weight = {
+        weight = 0.07
+    }
+}
+
+tec_energy_expenditure_edict_campaigns = {
+    resource = energy
+    type = expenditure
+    category = edicts
+
+    potential = {
+        has_resource = {
+            type = energy
+            amount > 1000
+        }
+        OR = {
+            AND = {
+                is_gestalt = no
+                has_technology = tech_planetary_unification
+            }
+            AND = {
+                is_machine_empire = yes
+                has_technology = tech_planetary_unification
+            }
+        }
+    }
+
+    weight = {
+        weight = 0.2
+    }
+
+    desired_min = {
+        base = 0
+    }
+
+    desired_max = {
+        base = @campaignCost
+        multiply = value:edict_size_effect
+        multiply = 2
+    }
+}
+
+
+tec_energy_expenditure_edicts_biopsi = {
+    resource = energy
+    type = expenditure
+    category = edicts
+
+    potential = {
+        has_country_flag = tec_biopsionic_path_finished
+        has_country_resource = { type = sr_zro amount < 100 }
+        has_monthly_income = { resource = sr_zro value <= 0 }
+        NOT = { has_edict = tec_biopsionic_convergence_edict }
+    }
+
+    desired_min = {
+        base = 2000
+    }
+}
+
+
+
+tec_energy_expenditure_early_trade_minerals = {
+    resource = energy
+    type = expenditure
+    category = trade
+
+    potential = {
+        years_passed < 20
+
+        NOT = { has_deficit = energy }
+        has_resource = {
+            type = energy
+            amount > 250
+        }
+
+        has_resource = {
+            type = minerals
+            amount < 500
+        }
+
+        any_owned_planet = {
+            has_building_construction = no
+            OR = {
+                free_district_slots > 0
+                free_district_slots > 0
+            }
+        }
+    }
+
+    desired_min = {
+        base = 500
+    }
+}
+
+energy_expenditure_trade = {
+    resource = energy
+    type = expenditure
+    category = trade
+
+    potential = {
+        has_resource = {
+            type = energy
+            amount > 2000
+        }
+    }
+
+    weight = {
+        weight = 0.1
+    }
+}
+
+tec_energy_upkeep_trade = {
+    resource = energy
+    type = upkeep
+    category = trade
+
+    potential = {
+        has_resource = {
+            type = energy
+            amount > 2000
+        }
+    }
+
+    weight = {
+        weight = 0.2
+    }
+}
+
+
+energy_expenditure_trade_deficit = {
+    resource = energy
+    type = expenditure
+    category = trade
+
+    potential = {
+        has_resource = {
+            type = energy
+            amount > 500
+        }
+        OR = {
+            AND = {
+                has_monthly_income = {
+                    resource = minerals
+                    value < -1
+                }
+                has_resource = {
+                    type = minerals
+                    amount < 1000
+                }
+            }
+            AND = {
+                has_monthly_income = {
+                    resource = food
+                    value < -1
+                }
+                has_resource = {
+                    type = food
+                    amount < 500
+                }
+            }
+            AND = {
+                has_monthly_income = {
+                    resource = consumer_goods
+                    value < -1
+                }
+                has_resource = {
+                    type = consumer_goods
+                    amount < 500
+                }
+            }
+            AND = {
+                has_monthly_income = {
+                    resource = alloys
+                    value < -1
+                }
+                has_resource = {
+                    type = alloys
+                    amount < 500
+                }
+            }
+            AND = {
+                has_monthly_income = {
+                    resource = rare_crystals
+                    value < -1
+                }
+                has_resource = {
+                    type = rare_crystals
+                    amount < 10
+                }
+            }
+            AND = {
+                has_monthly_income = {
+                    resource = exotic_gases
+                    value < -1
+                }
+                has_resource = {
+                    type = exotic_gases
+                    amount < 10
+                }
+            }
+            AND = {
+                has_monthly_income = {
+                    resource = volatile_motes
+                    value < -1
+                }
+                has_resource = {
+                    type = volatile_motes
+                    amount < 10
+                }
+            }
+            AND = {
+                has_monthly_income = {
+                    resource = sr_zro
+                    value < -1
+                }
+                has_resource = {
+                    type = sr_zro
+                    amount < 50
+                }
+            }
+            AND = {
+                has_monthly_income = {
+                    resource = sr_dark_matter
+                    value < -1
+                }
+                has_resource = {
+                    type = sr_dark_matter
+                    amount < 50
+                }
+            }
+        }
+    }
+
+    weight = {
+        weight = 0.7
+    }
+}

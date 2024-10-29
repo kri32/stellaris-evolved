@@ -153,6 +153,21 @@ triggered_planet_modifier = {
 
 inline_script = capitals/compat/tec_starnet_capital
 
+
+# AI shite
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_ai = yes
+		}
+	}
+	job_clerk_add = -1
+	tec_anti_clerk_flag = 1
+	mult = value:tec_job_anti_clerk_count
+}
+
 # addons
 inline_script = {
 	script = mod_support/tec_inlines_include

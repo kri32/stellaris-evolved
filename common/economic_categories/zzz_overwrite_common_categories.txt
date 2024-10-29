@@ -126,11 +126,6 @@ resolutions = {
 edicts = {
 	use_for_ai_budget = yes
 	parent = country
-	ai_use_parent_for_resources_upkeep = {
-		energy
-		food
-		minerals
-	}
 	generate_mult_modifiers = {
 		cost
 		upkeep

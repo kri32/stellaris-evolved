@@ -14,59 +14,6 @@
 	#			So if the food is coded to have a weight of 0.3 for buildings in that case, the building will be made when 3k food are stored
 
 
-# Influence for certain buildings
-tec_influence_expenditure_planets_low = {
-	resource = influence
-	type = expenditure
-	category = planets
-
-	potential = {
-		resource_stockpile_compare = { resource = influence value < 100 }
-	}
-
-	weight = {
-		weight = 0.5
-	}
-}
-
-tec_influence_expenditure_planets_med = {
-	resource = influence
-	type = expenditure
-	category = planets
-
-	potential = {
-		resource_stockpile_compare = { resource = influence value >= 100 }
-		resource_stockpile_compare = { resource = influence value < 250	}
-	}
-
-	weight = {
-		weight = 0.3
-	}
-
-	# this is the cost of the arcology project decision
-	desired_max = {
-		base = 250
-	}
-}
-
-tec_influence_expenditure_planets_high = {
-	resource = influence
-	type = expenditure
-	category = planets
-
-	potential = {
-		resource_stockpile_compare = { resource = influence value >= 250 }
-	}
-
-	weight = {
-		weight = 0.20
-	}
-
-	desired_max = {
-		base = 200
-	}
-}
-
 # Alloys for blockers 
 tec_expenditure_alloys_blockers = {	# extremehigh and priority because rw origin
 	resource = alloys
@@ -97,328 +44,8 @@ tec_expenditure_alloys_blockers = {	# extremehigh and priority because rw origin
 }
 
 
-tec_expenditure_zro_blockers = {	# extremehigh and priority because psionics
-	resource = sr_zro
-	type = expenditure
-	category = deposit_blockers
-
-	potential = {
-		resource_stockpile_compare = {
-			resource = sr_zro value >= 100
-		}
-	}
-
-	weight = {
-		weight = 0.5
-	}
-
-	desired_max = {
-		base = 200
-	}
-}
-
-
-# Lithoid biohive eco
-	tec_minerals_expenditure_starbases_low = {
-		resource = minerals
-		type = expenditure
-		category = starbases
-
-		potential = {
-			resource_stockpile_compare = { resource = minerals value < 1000 }
-			tec_is_biohive = yes
-			is_lithoid_empire = yes
-			NOR = {
-				tec_uses_food_buildings = yes
-				tec_uses_food_buildings_smol = yes
-			}
-		}
-
-		weight = {
-			weight = 0.3
-		}
-	}
-
-	tec_minerals_expenditure_starbases_med = {
-		resource = minerals
-		type = expenditure
-		category = starbases
-
-		potential = {
-			resource_stockpile_compare = { resource = minerals value >= 1000 }
-			resource_stockpile_compare = { resource = minerals value < 2000	}
-			tec_is_biohive = yes
-			is_lithoid_empire = yes
-			tec_uses_food_buildings = no
-		}
-
-		weight = {
-			weight = 0.4
-		}
-	}
-
-	tec_minerals_expenditure_starbases_high = {
-		resource = minerals
-		type = expenditure
-		category = starbases
-
-		potential = {
-			resource_stockpile_compare = { resource = minerals value >= 2000 }
-			tec_is_biohive = yes
-			is_lithoid_empire = yes
-			tec_uses_food_buildings = no
-		}
-
-		weight = {
-			weight = 0.5
-		}
-	}
-
-# /
-
-# Food for buildings and decisions
-	tec_food_expenditure_planets_low = {
-		resource = food
-		type = expenditure
-		category = planets
-
-		potential = {
-			resource_stockpile_compare = { resource = food value < 1000 }
-			OR = {
-				tec_uses_food_buildings = yes
-				tec_uses_food_buildings_smol = yes
-			}
-		}
-
-		weight = {
-			weight = 0.8
-		}
-
-		desired_min = {
-			base = 600
-		}
-	}
-
-	tec_food_expenditure_planets_med = {
-		resource = food
-		type = expenditure
-		category = planets
-
-		potential = {
-			resource_stockpile_compare = { resource = food value >= 1000 }
-			resource_stockpile_compare = { resource = food value < 2000	}
-			tec_uses_food_buildings = yes
-		}
-
-		weight = {
-			weight = 1
-		}
-
-		desired_min = {
-			base = 800
-		}
-	}
-
-	tec_food_expenditure_planets_high = {
-		resource = food
-		type = expenditure
-		category = planets
-
-		potential = {
-			resource_stockpile_compare = { resource = food value >= 2000 }
-			tec_uses_food_buildings = yes
-		}
-
-		weight = {
-			weight = 1.8
-		}
-
-		desired_min = {
-			base = 1000
-		}
-	}
-# /
-
-# Starbase organic hive fix
-	tec_food_expenditure_starbases_low = {
-		resource = food
-		type = expenditure
-		category = starbases
-
-		potential = {
-			resource_stockpile_compare = { resource = food value < 1000 }
-			OR = {
-				tec_uses_food_buildings = yes
-				tec_uses_food_buildings_smol = yes
-			}
-		}
-
-		weight = {
-			weight = 0.3
-		}
-	}
-
-	tec_food_expenditure_starbases_med = {
-		resource = food
-		type = expenditure
-		category = starbases
-
-		potential = {
-			resource_stockpile_compare = { resource = food value >= 1000 }
-			resource_stockpile_compare = { resource = food value < 2000	}
-			tec_uses_food_buildings = yes
-		}
-
-		weight = {
-			weight = 0.25
-		}
-	}
-
-	tec_food_expenditure_starbases_high = {
-		resource = food
-		type = expenditure
-		category = starbases
-
-		potential = {
-			resource_stockpile_compare = { resource = food value >= 2000 }
-			tec_uses_food_buildings = yes
-		}
-
-		weight = {
-			weight = 0.15
-		}
-	}
-
-	tec_food_expenditure_stations_low = {
-		resource = food
-		type = expenditure
-		category = stations
-	
-		potential = {
-			tec_uses_food_buildings = yes
-			resource_stockpile_compare = { resource = food value < 1000 }
-		}
-	
-		weight = {
-			weight = 0.2
-		}
-	}
-	
-	tec_food_expenditure_stations_med = {
-		resource = food
-		type = expenditure
-		category = stations
-	
-		potential = {
-			tec_uses_food_buildings = yes
-			resource_stockpile_compare = { resource = food value >= 1000 }
-			resource_stockpile_compare = { resource = food value < 2000 }
-		}
-	
-		weight = {
-			weight = 0.15
-		}
-	}
-	
-	tec_food_expenditure_stations_high = {
-		resource = food
-		type = expenditure
-		category = stations
-	
-		potential = {
-			tec_uses_food_buildings = yes
-			resource_stockpile_compare = { resource = food value >= 2000 }
-		}
-	
-		weight = {
-			weight = 0.1
-		}
-	}
-# /
-
-tec_food_expenditure_decisions = {
-	resource = food
-	type = expenditure
-	category = decisions
-
-	potential = {
-		tec_uses_food_buildings = no
-		resource_stockpile_compare = { resource = food value >= 500 }
-	}
-
-	weight = {
-		weight = 0.5
-	}
-}
-
-tec_food_expenditure_decision_doit = {
-	resource = food
-	type = expenditure
-	category = decisions
-
-	potential = {
-		resource_stockpile_compare = { resource = food value >= 500 }
-		AND = {
-			is_ai = yes
-			tec_uses_food_buildings = no
-			has_country_flag = tec_ai_use_food_for_worlds
-		}
-	}
-
-	weight = {
-		weight = 0.8
-	}
-}
-
 #food user fix since ratios were way too high for them
 
-food_expenditure_buffer_food_user = { # Buffer, will not be spent
-	resource = food
-	type = expenditure
-	category = buffer
-
-	potential = {
-		tec_uses_food_buildings = yes
-	}
-
-	weight = {
-		weight = 0.05
-	}
-}
-
-tec_food_expenditure_decisions_food_user = {
-	resource = food
-	type = expenditure
-	category = decisions
-
-	potential = {
-		tec_uses_food_buildings = yes
-		resource_stockpile_compare = { resource = food value >= 500 }
-	}
-
-	weight = {
-		weight = 0.1
-	}
-}
-
-tec_food_expenditure_decision_doit_food_user = {
-	resource = food
-	type = expenditure
-	category = decisions
-
-	potential = {
-		resource_stockpile_compare = { resource = food value >= 500 }
-		AND = {
-			is_ai = yes
-			tec_uses_food_buildings = yes
-			has_country_flag = tec_ai_use_food_for_worlds
-		}
-	}
-
-	weight = {
-		weight = 0.1
-	}
-}
 
 # #Colonies for food empire, more at low food, lower at higher food
 # #It sometimes happened that the AI was locked during war, making it stockpile budget for colonies it couldn't spend. This fixes that.
@@ -449,163 +76,6 @@ tec_food_expenditure_decision_doit_food_user = {
 # 		base = 550
 # 	}
 # }
-
-# Energy for buildings
-tec_energy_expenditure_planets_low = {
-	resource = energy
-	type = expenditure
-	category = planets
-
-	potential = {
-		resource_stockpile_compare = { resource = food value < 1000 }
-	}
-
-	weight = {
-		weight = 0.6
-	}
-}
-
-tec_energy_expenditure_planets_med = {
-	resource = energy
-	type = expenditure
-	category = planets
-
-	potential = {
-		resource_stockpile_compare = { resource = energy value >= 1000 }
-		resource_stockpile_compare = { resource = energy value < 2000	}
-	}
-
-	weight = {
-		weight = 0.6
-	}
-}
-
-tec_energy_expenditure_planets_high = {
-	resource = energy
-	type = expenditure
-	category = planets
-
-	potential = {
-		resource_stockpile_compare = { resource = energy value >= 2000 }
-	}
-
-	weight = {
-		weight = 0.4
-	}
-}
-
-# Machine digitalization
-tec_energy_expenditure_starbases_low = {
-	resource = food
-	type = expenditure
-	category = starbases
-
-	potential = {
-		resource_stockpile_compare = { resource = energy value < 1000 }
-		tec_uses_energy_buildings = yes
-	}
-
-	weight = {
-		weight = 0.3
-	}
-}
-
-tec_energy_expenditure_starbases_med = {
-	resource = energy
-	type = expenditure
-	category = starbases
-
-	potential = {
-		resource_stockpile_compare = { resource = energy value >= 1000 }
-		resource_stockpile_compare = { resource = energy value < 2000	}
-		tec_uses_energy_buildings = yes
-	}
-
-	weight = {
-		weight = 0.4
-	}
-}
-
-tec_energy_expenditure_starbases_high = {
-	resource = energy
-	type = expenditure
-	category = starbases
-
-	potential = {
-		resource_stockpile_compare = { resource = energy value >= 2000 }
-		tec_uses_energy_buildings = yes
-	}
-
-	weight = {
-		weight = 0.5
-	}
-}
-
-tec_energy_expenditure_stations_low = {
-	resource = energy
-	type = expenditure
-	category = stations
-
-	potential = {
-		tec_uses_energy_buildings = yes
-		resource_stockpile_compare = { resource = energy value < 1000 }
-	}
-
-	weight = {
-		weight = 0.2
-	}
-}
-
-tec_energy_expenditure_stations_med = {
-	resource = energy
-	type = expenditure
-	category = stations
-
-	potential = {
-		tec_uses_energy_buildings = yes
-		resource_stockpile_compare = { resource = energy value >= 1000 }
-		resource_stockpile_compare = { resource = energy value < 2000 }
-	}
-
-	weight = {
-		weight = 0.15
-	}
-}
-
-tec_energy_expenditure_stations_high = {
-	resource = energy
-	type = expenditure
-	category = stations
-
-	potential = {
-		tec_uses_energy_buildings = yes
-		resource_stockpile_compare = { resource = energy value >= 2000 }
-	}
-
-	weight = {
-		weight = 0.1
-	}
-}
-
-
-
-tec_energy_expenditure_decisions_high = {
-	resource = energy
-	type = expenditure
-	category = decisions
-
-	potential = {
-		# only consider these kinds of decisions when "wealthy"
-		has_resource = {
-			type = energy
-			amount > 5000
-		}
-	}
-
-	weight = {
-		weight = 0.2
-	}
-}
 
 
 
@@ -732,91 +202,6 @@ tec_livingmetal_expenditure_decisions_high = {
 
 	weight = {
 		weight = 0.2
-	}
-}
-
-tec_energy_expenditure_edicts = {
-	resource = energy
-	type = expenditure
-	category = edicts
-
-	potential = {
-		has_country_flag = tec_biopsionic_path_finished
-		has_country_resource = { type = sr_zro amount < 100 }
-		has_monthly_income = { resource = sr_zro value <= 0 }
-	}
-
-	desired_min = {
-		base = 2000
-	}
-}
-
-tec_zro_expenditure_edicts = {
-	resource = sr_zro
-	type = expenditure
-	category = edicts
-
-	potential = {
-		has_country_flag = tec_biopsionic_path_finished
-		OR = {
-			has_monthly_income = { resource = sr_zro value > 0 }
-			has_country_resource = { type = sr_zro amount >= 100 }
-		}
-	}
-
-	desired_min = {
-		base = 100
-	}
-}
-
-
-tec_energy_expenditure_early_trade_minerals = {
-	resource = energy
-	type = expenditure
-	category = trade
-
-	potential = {
-		years_passed < 20
-
-		NOT = { has_deficit = energy }
-		has_resource = {
-			type = energy
-			amount > 250
-		}
-
-		has_resource = {
-			type = minerals
-			amount < 500
-		}
-
-		any_owned_planet = {
-			has_building_construction = no
-			OR = {
-				free_district_slots > 0
-				free_district_slots > 0
-			}
-		}
-	}
-
-	desired_min = {
-		base = 500
-	}
-}
-
-energy_expenditure_trade = {
-	resource = energy
-	type = expenditure
-	category = trade
-
-	potential = {
-		has_resource = {
-			type = energy
-			amount > 2000
-		}
-	}
-
-	weight = {
-		weight = 0.1
 	}
 }
 
@@ -960,72 +345,121 @@ tec_alloys_expenditure_trade = {
 	}
 }
 
-tec_influnece_expenditure_colonies_expand = {
-	resource = influence
-	type = expenditure
-	category = colonies
+
+# strategics
+rare_crystals_upkeep_edicts = {
+	resource = rare_crystals
+	type = upkeep
+	category = edicts
 
 	potential = {
-		OR = {
-			is_at_war = no
-			mid_game_years_passed > 0
-		}
-		ai_colonize_plans > 0
-
-		is_void_dweller_empire = yes
-		NOT = { has_ascension_perk = ap_voidborn }
-
-		any_owned_planet = {
-			is_colony = no
-			OR = {
-				tec_is_gaia_world = yes
-				tec_is_relic_world = yes
-				tec_is_relic_world = yes
-				is_artificial = yes
-			}
-		}
+		has_resource = { type = rare_crystals amount > 100 }
 	}
 
 	weight = {
-		weight = 0.5
+		base = 0.25
 	}
+}
+
+tec_rare_crystals_expediture_edicts = {
+	resource = rare_crystals
+	type = expenditure
+	category = edicts
+
+	potential = {
+		has_resource = { type = rare_crystals amount > 100 }
+	}
+
+	weight = {
+		weight = 0.2
+	}
+
 	desired_min = {
 		base = 0
-		modifier = {
-			add = 250
-			is_void_dweller_empire = yes
-			NOT = { has_ascension_perk = ap_voidborn } # do not penalize voidborn
-			NOT = {
-				has_country_flag = tec_void_dweller_colonization_on
-			}
-		}
-		modifier = {
-			add = 250
-			is_void_dweller_empire = yes
-			NOT = { has_ascension_perk = ap_voidborn } # do not penalize voidborn
-			NOT = {
-				has_active_tradition = tr_tec_outreach_final_3_vd
-			}
-		}
 	}
 
 	desired_max = {
+		base = @tec_strategic_edict_cost
+		multiply = value:edict_size_effect
+		multiply = 1.1
+	}
+}
+
+
+exotic_gases_upkeep_edicts = {
+	resource = exotic_gases
+	type = upkeep
+	category = edicts
+
+	potential = {
+		has_resource = { type = exotic_gases amount > 100 }
+	}
+
+	weight = {
+		base = 0.25
+	}
+}
+
+tec_exotic_gases_expediture_edicts = {
+	resource = exotic_gases
+	type = expenditure
+	category = edicts
+
+	potential = {
+		has_resource = { type = exotic_gases amount > 100 }
+	}
+
+	weight = {
+		weight = 0.2
+	}
+
+	desired_min = {
 		base = 0
-		modifier = {
-			add = 250
-			is_void_dweller_empire = yes
-			NOT = { has_ascension_perk = ap_voidborn } # do not penalize voidborn
-			NOT = {
-				has_country_flag = tec_void_dweller_colonization_on
-			}
-		}
-		modifier = {
-			add = 250
-			is_void_dweller_empire = yes
-			NOT = { has_ascension_perk = ap_voidborn } # do not penalize voidborn
-			NOT = {
-				has_active_tradition = tr_tec_outreach_final_3_vd
-			}
-		}
+	}
+
+	desired_max = {
+		base = @tec_strategic_edict_cost
+		multiply = value:edict_size_effect
+		multiply = 1.1
+	}
+}
+
+
+
+volatile_motes_upkeep_edicts = {
+	resource = volatile_motes
+	type = upkeep
+	category = edicts
+
+	potential = {
+		has_resource = { type = volatile_motes amount > 100 }
+	}
+
+	weight = {
+		base = 0.25
+	}
+}
+
+tec_volatile_motes_expediture_edicts = {
+	resource = volatile_motes
+	type = expenditure
+	category = edicts
+
+	potential = {
+		has_resource = { type = volatile_motes amount > 100 }
+	}
+
+	weight = {
+		weight = 0.2
+	}
+
+	desired_min = {
+		base = 0
+	}
+
+	desired_max = {
+		base = @tec_strategic_edict_cost
+		multiply = value:edict_size_effect
+		multiply = 1.1
 	}
 }

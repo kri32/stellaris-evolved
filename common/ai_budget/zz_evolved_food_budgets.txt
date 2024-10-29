@@ -1,0 +1,295 @@
+tec_food_expenditure_planets_low = {
+    resource = food
+    type = expenditure
+    category = planets
+
+    potential = {
+        resource_stockpile_compare = { resource = food value < 1000 }
+        OR = {
+            tec_uses_food_buildings = yes
+            tec_uses_food_buildings_smol = yes
+        }
+    }
+
+    weight = {
+        weight = 0.8
+    }
+
+    desired_min = {
+        base = 600
+    }
+}
+
+tec_food_expenditure_planets_med = {
+    resource = food
+    type = expenditure
+    category = planets
+
+    potential = {
+        resource_stockpile_compare = { resource = food value >= 1000 }
+        resource_stockpile_compare = { resource = food value < 2000	}
+        tec_uses_food_buildings = yes
+    }
+
+    weight = {
+        weight = 1
+    }
+
+    desired_min = {
+        base = 800
+    }
+}
+
+tec_food_expenditure_planets_high = {
+    resource = food
+    type = expenditure
+    category = planets
+
+    potential = {
+        resource_stockpile_compare = { resource = food value >= 2000 }
+        tec_uses_food_buildings = yes
+    }
+
+    weight = {
+        weight = 1.8
+    }
+
+    desired_min = {
+        base = 1000
+    }
+}
+# /
+
+# Starbase organic hive fix
+tec_food_expenditure_starbases_low = {
+    resource = food
+    type = expenditure
+    category = starbases
+
+    potential = {
+        resource_stockpile_compare = { resource = food value < 1000 }
+        OR = {
+            tec_uses_food_buildings = yes
+            tec_uses_food_buildings_smol = yes
+        }
+    }
+
+    weight = {
+        weight = 0.3
+    }
+}
+
+tec_food_expenditure_starbases_med = {
+    resource = food
+    type = expenditure
+    category = starbases
+
+    potential = {
+        resource_stockpile_compare = { resource = food value >= 1000 }
+        resource_stockpile_compare = { resource = food value < 2000	}
+        tec_uses_food_buildings = yes
+    }
+
+    weight = {
+        weight = 0.25
+    }
+}
+
+tec_food_expenditure_starbases_high = {
+    resource = food
+    type = expenditure
+    category = starbases
+
+    potential = {
+        resource_stockpile_compare = { resource = food value >= 2000 }
+        tec_uses_food_buildings = yes
+    }
+
+    weight = {
+        weight = 0.15
+    }
+}
+
+tec_food_expenditure_stations_low = {
+    resource = food
+    type = expenditure
+    category = stations
+
+    potential = {
+        tec_uses_food_buildings = yes
+        resource_stockpile_compare = { resource = food value < 1000 }
+    }
+
+    weight = {
+        weight = 0.2
+    }
+}
+
+tec_food_expenditure_stations_med = {
+    resource = food
+    type = expenditure
+    category = stations
+
+    potential = {
+        tec_uses_food_buildings = yes
+        resource_stockpile_compare = { resource = food value >= 1000 }
+        resource_stockpile_compare = { resource = food value < 2000 }
+    }
+
+    weight = {
+        weight = 0.15
+    }
+}
+
+tec_food_expenditure_stations_high = {
+    resource = food
+    type = expenditure
+    category = stations
+
+    potential = {
+        tec_uses_food_buildings = yes
+        resource_stockpile_compare = { resource = food value >= 2000 }
+    }
+
+    weight = {
+        weight = 0.1
+    }
+}
+# /
+
+tec_food_expenditure_decisions = {
+    resource = food
+    type = expenditure
+    category = decisions
+
+    potential = {
+        tec_uses_food_buildings = no
+        resource_stockpile_compare = { resource = food value >= 500 }
+    }
+
+    weight = {
+        weight = 0.5
+    }
+}
+
+tec_food_expenditure_decision_doit = {
+    resource = food
+    type = expenditure
+    category = decisions
+
+    potential = {
+        resource_stockpile_compare = { resource = food value >= 500 }
+        AND = {
+            is_ai = yes
+            tec_uses_food_buildings = no
+            has_country_flag = tec_ai_use_food_for_worlds
+        }
+    }
+
+    weight = {
+        weight = 0.8
+    }
+}
+
+
+food_expenditure_buffer_food_user = { # Buffer, will not be spent
+    resource = food
+    type = expenditure
+    category = buffer
+
+    potential = {
+        tec_uses_food_buildings = yes
+    }
+
+    weight = {
+        weight = 0.05
+    }
+}
+
+tec_food_expenditure_decisions_food_user = {
+    resource = food
+    type = expenditure
+    category = decisions
+
+    potential = {
+        tec_uses_food_buildings = yes
+        resource_stockpile_compare = { resource = food value >= 500 }
+    }
+
+    weight = {
+        weight = 0.1
+    }
+}
+
+tec_food_expenditure_decision_doit_food_user = {
+    resource = food
+    type = expenditure
+    category = decisions
+
+    potential = {
+        resource_stockpile_compare = { resource = food value >= 500 }
+        AND = {
+            is_ai = yes
+            tec_uses_food_buildings = yes
+            has_country_flag = tec_ai_use_food_for_worlds
+        }
+    }
+
+    weight = {
+        weight = 0.1
+    }
+}
+
+tec_food_upkeep_edicts_campaigns = {
+	resource = food
+	type = upkeep
+	category = edicts
+
+	potential = {
+		has_resource = {
+			type = food
+			amount > 2000
+		}
+		AND = {
+			is_gestalt = yes
+			is_lithoid = no
+			has_technology = tech_planetary_unification
+		}
+	}
+
+	weight = {
+		weight = 0.07
+	}
+}
+
+tec_food_expenditure_edict_campaigns = {
+    resource = food
+    type = expenditure
+    category = edicts
+
+    potential = {
+        has_resource = {
+            type = minerals
+            amount > 2000
+        }
+        AND = {
+            is_gestalt = yes
+            is_lithoid = no
+            has_technology = tech_planetary_unification
+        }
+    }
+
+    weight = {
+        weight = 0.2
+    }
+
+    desired_min = {
+        base = 0
+    }
+
+    desired_max = {
+        base = @hiveFood
+        multiply = value:edict_size_effect
+        multiply = 2
+    }
+}

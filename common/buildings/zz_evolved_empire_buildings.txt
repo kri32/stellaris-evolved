@@ -971,7 +971,18 @@
 		inline_script = {
 			script = buildings/tec_aibait
 			trigger = "
-				NOT = { has_building = building_tec_cyberpsionic_extractor }
+				OR = {
+					NOT = { has_building = building_tec_cyberpsionic_extractor }
+					AND = {
+						exists = owner
+						owner = {
+							check_modifier_value = {
+								modifier = tec_entropy
+								value < 0.5
+						  	}
+						}
+					}
+ 				}
 			"
 		}
 	}
@@ -1127,6 +1138,21 @@
 		}
 		triggered_desc = {
 			text = building_tec_cyberpsionic_transmuter_designation
+		}
+
+		inline_script = {
+			script = buildings/tec_aibait
+			trigger = "
+				AND = {
+					exists = owner
+					owner = {
+						check_modifier_value = {
+							modifier = tec_entropy
+							value > 0.5
+						}
+					}
+				}
+			"
 		}
 	}
 

@@ -107,7 +107,12 @@ $plan$ = {
 		optional = yes
 		set_name = "evolved empire base zro"
 		potential = {
-			tec_has_any_psionic_ascension_finished = yes
+			OR = {
+				tec_has_any_psionic_ascension_finished = yes
+				has_monthly_income = {
+					resource = sr_zro value <= 0
+				}
+			}
 		}
 
 		income = {
