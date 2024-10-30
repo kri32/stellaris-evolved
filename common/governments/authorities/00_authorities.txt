@@ -77,6 +77,8 @@
 
 auth_democratic = {
 	icon = gfx/interface/icons/governments/authorities/auth_democratic.dds
+	color = { 81 140 44 255 }
+
 	election_term_years = 10
 	re_election_allowed = yes
 	can_have_emergency_elections = no
@@ -300,6 +302,9 @@ auth_democratic = {
 }
 
 auth_oligarchic = {
+	icon = gfx/interface/icons/governments/authorities/auth_oligarchic.dds
+	color = { 164 135 18 255 }
+
 	election_term_years = 20
 	election_type = oligarchic
 	can_have_emergency_elections = yes
@@ -436,6 +441,9 @@ auth_oligarchic = {
 }
 
 auth_tec_theocracy = {
+	icon = gfx/interface/icons/governments/authorities/auth_tec_theocracy.dds
+	color = { 164 135 18 255 }
+
 	election_type = oligarchic
 	can_have_emergency_elections = yes
 	max_election_candidates = 4
@@ -499,8 +507,10 @@ auth_tec_theocracy = {
 }
 
 auth_dictatorial = {
-	election_type = oligarchic
+	icon = gfx/interface/icons/governments/authorities/auth_dictatorial.dds
+	color = { 162 85 12 255 }
 
+	election_type = oligarchic
 	has_agendas = yes
 
 	ruler_council_position = councilor_ruler_dictatorial
@@ -727,6 +737,9 @@ auth_dictatorial = {
 }
 
 auth_imperial = {
+	icon = gfx/interface/icons/governments/authorities/auth_imperial.dds
+	color = { 141 38 38 255 }
+
 	has_heir = yes
 
 	has_agendas = yes
@@ -872,6 +885,9 @@ auth_imperial = {
 }
 
 auth_corporate = {
+	icon = gfx/interface/icons/governments/authorities/auth_corporate.dds
+	color = { 132 143 38 255 }
+
 	election_term_years = 20
 	election_type = oligarchic
 	can_have_emergency_elections = yes
@@ -1017,6 +1033,9 @@ auth_corporate = {
 }
 
 auth_tec_patrocorporate = {
+	icon = gfx/interface/icons/governments/authorities/auth_corporate.dds
+	color = { 132 143 38 255 }
+
 	has_heir = yes
 
 	has_agendas = yes
@@ -1092,6 +1111,9 @@ auth_tec_patrocorporate = {
 }
 
 auth_tec_ai = {
+	icon = gfx/interface/icons/governments/authorities/auth_tec_ai.dds
+	color = { 162 85 12 255 }
+
 	has_heir = no
 
 	has_agendas = no
@@ -1158,6 +1180,9 @@ auth_tec_ai = {
 }
 
 auth_tec_ai_corporate = {
+	icon = gfx/interface/icons/governments/authorities/auth_tec_ai_corporate.dds
+	color = { 132 143 38 255 }
+
 	has_heir = no
 
 	has_agendas = no
@@ -1226,7 +1251,12 @@ auth_tec_ai_corporate = {
 	}
 }
 
+#auth_tec_stratified
+
 auth_hive_mind = {
+	icon = gfx/interface/icons/governments/authorities/auth_hive_mind.dds
+	color = { 225 165 33 255 }
+
 	has_heir = no
 	election_type = none
 	has_factions = no
@@ -1323,6 +1353,9 @@ auth_hive_mind = {
 }
 
 auth_tec_hive_biological = {
+	icon = gfx/interface/icons/governments/authorities/auth_tec_hive_biological.dds
+	color = { 225 165 33 255 }
+
 	has_heir = no
 	election_type = none
 	has_factions = no
@@ -1389,6 +1422,9 @@ auth_tec_hive_biological = {
 }
 
 auth_tec_hive_cybernetic = {
+	icon = gfx/interface/icons/governments/authorities/auth_tec_hive_cybernetic.dds
+	color = { 225 165 33 255 }
+
 	has_heir = no
 	election_type = none
 	has_factions = no
@@ -1449,6 +1485,9 @@ auth_tec_hive_cybernetic = {
 }
 
 auth_tec_hive_biomechanical = {
+	icon = gfx/interface/icons/governments/authorities/auth_tec_hive_cybernetic.dds
+	color = { 225 165 33 255 }
+
 	has_heir = no
 	election_type = none
 	has_factions = no
@@ -1515,6 +1554,9 @@ auth_tec_hive_biomechanical = {
 }
 
 auth_machine_intelligence = {
+	icon = gfx/interface/icons/governments/authorities/auth_machine_intelligence.dds
+	color = { 0 165 155 255 }
+
 	has_heir = no
 	election_type = none
 	has_factions = no
@@ -1629,7 +1671,10 @@ auth_machine_intelligence = {
 	}
 }
 
-auth_tec_machine_consensus = {
+auth_tec_machine_consensus = {	# TODO AUTHORITY
+	icon = gfx/interface/icons/governments/authorities/auth_machine_intelligence.dds
+	color = { 0 165 155 255 }
+
 	has_heir = no
 	election_type = none
 	has_factions = no
@@ -1701,6 +1746,8 @@ auth_tec_machine_consensus = {
 }
 
 auth_ancient_machine_intelligence = {
+	color = { 0 165 155 255 }
+
 	has_heir = no
 	election_type = none
 	can_reform = no

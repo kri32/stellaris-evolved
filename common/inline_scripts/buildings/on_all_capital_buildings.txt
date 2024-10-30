@@ -11,3 +11,6 @@ triggered_planet_modifier = {
 	planet_max_buildings_add = @[build_slots_t1 * -1]
 	planet_max_branch_office_buildings_add = @[branch_slots_t1 * -1]
 }
+
+# Primal Calling origin: Give Ethic-based jobs
+inline_script = jobs/wranglers_or_variant_add

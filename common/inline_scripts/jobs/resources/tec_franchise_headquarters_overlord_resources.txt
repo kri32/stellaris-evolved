@@ -2,6 +2,7 @@
 
 produces = {
 	trigger = {
+		exists = planet
 		planet = {
 			has_planet_flag = has_franchise_headquarters
 		}

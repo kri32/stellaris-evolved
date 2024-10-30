@@ -121,7 +121,6 @@ clerk = {
 		inline_script = jobs/resources/tec_franchise_headquarters_overlord_resources
 	}
 
-
 	triggered_planet_modifier = {
 		trade_value_add = 3
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
@@ -1202,7 +1201,7 @@ ranger = {
 	resources = {
 		category = planet_rangers
 		produces = {
-			society_research = 2
+			society_research = 4
 		}
 	}
 

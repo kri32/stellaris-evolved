@@ -113,7 +113,7 @@ xeno_zoo_keeper = {
 	}
 
 	resources = {
-		category = planet_researchers
+		category = planet_zoo_keepers
 		produces = {
 			society_research = 9
 		}
@@ -844,6 +844,11 @@ culture_worker = {
 	}
 
 	inline_script = "jobs/culture_worker_outputs"
+
+	inline_script = {
+		script = "jobs/galactic_curator_council_output"
+		CATEGORY = planet_culture_workers
+	}
 
 	inline_script = jobs/tec_space_tag
 
@@ -2338,6 +2343,11 @@ death_chronicler = {
 	}
 
 	inline_script = jobs/culture_worker_outputs
+
+	inline_script = {
+		script = "jobs/galactic_curator_council_output"
+		CATEGORY = planet_culture_workers
+	}
 
 	inline_script = jobs/tec_space_tag
 	inline_script = {
