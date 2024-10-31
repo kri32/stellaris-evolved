@@ -18,11 +18,9 @@ xeno_geology_holomuseum = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 1
 		}
 	}
 
@@ -30,45 +28,14 @@ xeno_geology_holomuseum = {
 		xeno_geology_specimens_produces_mult = @holomuseum_specimen_produces_mult
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-			}
-		}
-		modifier = {
-			job_geologist_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = yes
-			}
-		}
-		modifier = {
-			job_drone_geologist_add = 2
-		}
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-			}
-		}
-		text = job_geologist_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = yes
-			}
-		}
-		text = job_drone_geologist_effect_desc
+	inline_script = {
+		script = jobs/tec_geologist
+		count = 2
+		mult = 1
+		display = with_desc
+		trigger = ""
+		default_job = geologist
+		default_trigger = "is_gestalt = yes"
 	}
 }
 
@@ -86,11 +53,9 @@ aesthetic_wonders_holomuseum = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 1
 		}
 	}
 
@@ -98,45 +63,14 @@ aesthetic_wonders_holomuseum = {
 		aesthetic_wonder_specimens_produces_mult = @holomuseum_specimen_produces_mult
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-			}
-		}
-		modifier = {
-			job_wonder_curator_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = yes
-			}
-		}
-		modifier = {
-			job_drone_wonder_curator_add = 2
-		}
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-			}
-		}
-		text = job_wonder_curator_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = yes
-			}
-		}
-		text = job_drone_wonder_curator_effect_desc
+	inline_script = {
+		script = jobs/tec_wonder_curator
+		count = 2
+		mult = 1
+		display = with_desc
+		trigger = ""
+		default_job = wonder_curator
+		default_trigger = "is_gestalt = yes"
 	}
 }
 
@@ -154,11 +88,9 @@ galactic_history_holomuseum = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 1
 		}
 	}
 
@@ -166,45 +98,14 @@ galactic_history_holomuseum = {
 		historical_item_specimens_produces_mult = @holomuseum_specimen_produces_mult
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-			}
-		}
-		modifier = {
-			job_historical_curator_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = yes
-			}
-		}
-		modifier = {
-			job_drone_historical_curator_add = 2
-		}
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-			}
-		}
-		text = job_historical_curator_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = yes
-			}
-		}
-		text = job_drone_historical_curator_effect_desc
+	inline_script = {
+		script = jobs/tec_historical_curator
+		count = 2
+		mult = 1
+		display = with_desc
+		trigger = ""
+		default_job = historical_curator
+		default_trigger = "is_gestalt = yes"
 	}
 }
 
@@ -213,6 +114,9 @@ wildlife_ranch = {
 	base_cap_amount = 1
 	category = amenity
 
+	upgrades = {
+		"wildlife_ranch_2"
+	}
 	potential = {
 		owner = {
 			OR = {
@@ -240,21 +144,15 @@ wildlife_ranch = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 1
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 2
-	}
-
-	upgrades = {
-		"wildlife_ranch_2"
 	}
 }
 
@@ -263,6 +161,24 @@ wildlife_ranch_2 = {
 	category = amenity
 	can_build = no
 
+	prerequisites = {
+		"tech_heritage_site"
+	}
+	show_tech_unlock_if = {
+		owner = {
+			has_origin = origin_primal_calling
+			OR = {
+				has_wrangler_job = yes
+				has_rancher_job = yes
+				has_drone_wrangler_job = yes
+			}
+		}
+	}
+
+	upgrades = {
+		"wildlife_ranch_3"
+	}
+
 	allow = {
 		has_upgraded_capital = yes
 	}
@@ -275,17 +191,6 @@ wildlife_ranch_2 = {
 		}
 	}
 
-	show_tech_unlock_if = {
-		owner = {
-			has_origin = origin_primal_calling
-			OR = {
-				has_wrangler_job = yes
-				has_rancher_job = yes
-				has_drone_wrangler_job = yes
-			}
-		}
-	}
-
 	convert_to = {
 		hunting_grounds_2
 		wildlife_sanctuary_2
@@ -295,25 +200,15 @@ wildlife_ranch_2 = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-		}
-		upkeep = {
-			energy = @b2_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 2
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 4
-	}
-
-	upgrades = {
-		"wildlife_ranch_3"
-	}
-
-	prerequisites = {
-		"tech_heritage_site"
 	}
 }
 
@@ -322,6 +217,20 @@ wildlife_ranch_3 = {
 	category = amenity
 	can_build = no
 
+	prerequisites = {
+		"tech_hypercomms_forum"
+	}
+	show_tech_unlock_if = {
+		owner = {
+			has_origin = origin_primal_calling
+			OR = {
+				has_wrangler_job = yes
+				has_rancher_job = yes
+				has_drone_wrangler_job = yes
+			}
+		}
+	}
+
 	allow = {
 		has_major_upgraded_capital = yes
 	}
@@ -334,17 +243,6 @@ wildlife_ranch_3 = {
 		}
 	}
 
-	show_tech_unlock_if = {
-		owner = {
-			has_origin = origin_primal_calling
-			OR = {
-				has_wrangler_job = yes
-				has_rancher_job = yes
-				has_drone_wrangler_job = yes
-			}
-		}
-	}
-
 	convert_to = {
 		hunting_grounds_3
 		wildlife_sanctuary_3
@@ -354,21 +252,15 @@ wildlife_ranch_3 = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-		}
-		upkeep = {
-			energy = @b3_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 3
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 6
-	}
-
-	prerequisites = {
-		"tech_hypercomms_forum"
 	}
 }
 
@@ -377,6 +269,10 @@ hunting_grounds = {
 	base_cap_amount = 1
 	category = amenity
 
+	upgrades = {
+		"hunting_grounds_2"
+	}
+
 	potential = {
 		owner = {
 			OR = {
@@ -402,21 +298,15 @@ hunting_grounds = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 1
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 2
-	}
-
-	upgrades = {
-		"hunting_grounds_2"
 	}
 }
 
@@ -425,6 +315,23 @@ hunting_grounds_2 = {
 	category = amenity
 	can_build = no
 
+	prerequisites = {
+		"tech_heritage_site"
+	}
+	show_tech_unlock_if = {
+		owner = {
+			has_origin = origin_primal_calling
+			OR = {
+				has_trophy_hunter_job = yes
+				has_hunter_drone_job = yes
+			}
+		}
+	}
+
+	upgrades = {
+		"hunting_grounds_3"
+	}
+
 	allow = {
 		has_upgraded_capital = yes
 	}
@@ -433,16 +340,6 @@ hunting_grounds_2 = {
 		owner = {
 			has_trophy_hunter_job = no
 			has_hunter_drone_job = no
-		}
-	}
-
-	show_tech_unlock_if = {
-		owner = {
-			has_origin = origin_primal_calling
-			OR = {
-				has_trophy_hunter_job = yes
-				has_hunter_drone_job = yes
-			}
 		}
 	}
 
@@ -455,11 +352,9 @@ hunting_grounds_2 = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-		}
-		upkeep = {
-			energy = @b2_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 2
 		}
 	}
 
@@ -467,20 +362,25 @@ hunting_grounds_2 = {
 		script = jobs/wranglers_add
 		AMOUNT = 4
 	}
-
-	upgrades = {
-		"hunting_grounds_3"
-	}
-
-	prerequisites = {
-		"tech_heritage_site"
-	}
 }
 
 hunting_grounds_3 = {
 	base_buildtime = @b3_time
 	category = amenity
 	can_build = no
+
+	prerequisites = {
+		"tech_hypercomms_forum"
+	}
+	show_tech_unlock_if = {
+		owner = {
+			has_origin = origin_primal_calling
+			OR = {
+				has_trophy_hunter_job = yes
+				has_hunter_drone_job = yes
+			}
+		}
+	}
 
 	allow = {
 		has_major_upgraded_capital = yes
@@ -493,16 +393,6 @@ hunting_grounds_3 = {
 		}
 	}
 
-	show_tech_unlock_if = {
-		owner = {
-			has_origin = origin_primal_calling
-			OR = {
-				has_trophy_hunter_job = yes
-				has_hunter_drone_job = yes
-			}
-		}
-	}
-
 	convert_to = {
 		wildlife_ranch_3
 		wildlife_sanctuary_3
@@ -512,11 +402,9 @@ hunting_grounds_3 = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-		}
-		upkeep = {
-			energy = @b3_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 3
 		}
 	}
 
@@ -524,16 +412,16 @@ hunting_grounds_3 = {
 		script = jobs/wranglers_add
 		AMOUNT = 6
 	}
-
-	prerequisites = {
-		"tech_hypercomms_forum"
-	}
 }
 
 wildlife_sanctuary = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
 	category = amenity
+
+	upgrades = {
+		"wildlife_sanctuary_2"
+	}
 
 	potential = {
 		owner = {
@@ -556,21 +444,15 @@ wildlife_sanctuary = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 1
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 2
-	}
-
-	upgrades = {
-		"wildlife_sanctuary_2"
 	}
 }
 
@@ -579,6 +461,20 @@ wildlife_sanctuary_2 = {
 	category = amenity
 	can_build = no
 
+	prerequisites = {
+		"tech_heritage_site"
+	}
+	show_tech_unlock_if = {
+		owner = {
+			has_origin = origin_primal_calling
+			has_animal_handler_job = yes
+		}
+	}
+
+	upgrades = {
+		"wildlife_sanctuary_3"
+	}
+
 	allow = {
 		has_upgraded_capital = yes
 	}
@@ -586,13 +482,6 @@ wildlife_sanctuary_2 = {
 	destroy_trigger = {
 		owner = {
 			has_animal_handler_job = no
-		}
-	}
-
-	show_tech_unlock_if = {
-		owner = {
-			has_origin = origin_primal_calling
-			has_animal_handler_job = yes
 		}
 	}
 
@@ -605,25 +494,15 @@ wildlife_sanctuary_2 = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-		}
-		upkeep = {
-			energy = @b2_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 2
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 4
-	}
-
-	upgrades = {
-		"wildlife_sanctuary_3"
-	}
-
-	prerequisites = {
-		"tech_heritage_site"
 	}
 }
 
@@ -632,6 +511,16 @@ wildlife_sanctuary_3 = {
 	category = amenity
 	can_build = no
 
+	prerequisites = {
+		"tech_hypercomms_forum"
+	}
+	show_tech_unlock_if = {
+		owner = {
+			has_origin = origin_primal_calling
+			has_animal_handler_job = yes
+		}
+	}
+
 	allow = {
 		has_major_upgraded_capital = yes
 	}
@@ -639,13 +528,6 @@ wildlife_sanctuary_3 = {
 	destroy_trigger = {
 		owner = {
 			has_animal_handler_job = no
-		}
-	}
-
-	show_tech_unlock_if = {
-		owner = {
-			has_origin = origin_primal_calling
-			has_animal_handler_job = yes
 		}
 	}
 
@@ -658,11 +540,9 @@ wildlife_sanctuary_3 = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-		}
-		upkeep = {
-			energy = @b3_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 3
 		}
 	}
 
@@ -670,16 +550,16 @@ wildlife_sanctuary_3 = {
 		script = jobs/wranglers_add
 		AMOUNT = 6
 	}
-
-	prerequisites = {
-		"tech_hypercomms_forum"
-	}
 }
 
 primal_arena = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
 	category = amenity
+
+	upgrades = {
+		"primal_arena_2"
+	}
 
 	potential = {
 		owner = {
@@ -702,21 +582,15 @@ primal_arena = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 1
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 2
-	}
-
-	upgrades = {
-		"primal_arena_2"
 	}
 }
 
@@ -725,6 +599,20 @@ primal_arena_2 = {
 	category = amenity
 	can_build = no
 
+	prerequisites = {
+		"tech_heritage_site"
+	}
+	show_tech_unlock_if = {
+		owner = {
+			has_origin = origin_primal_calling
+			has_beastfighter_job = yes
+		}
+	}
+
+	upgrades = {
+		"primal_arena_3"
+	}
+
 	allow = {
 		has_upgraded_capital = yes
 	}
@@ -732,13 +620,6 @@ primal_arena_2 = {
 	destroy_trigger = {
 		owner = {
 			has_beastfighter_job = no
-		}
-	}
-
-	show_tech_unlock_if = {
-		owner = {
-			has_origin = origin_primal_calling
-			has_beastfighter_job = yes
 		}
 	}
 
@@ -751,25 +632,15 @@ primal_arena_2 = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-		}
-		upkeep = {
-			energy = @b2_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 2
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 4
-	}
-
-	upgrades = {
-		"primal_arena_3"
-	}
-
-	prerequisites = {
-		"tech_heritage_site"
 	}
 }
 
@@ -778,6 +649,16 @@ primal_arena_3 = {
 	category = amenity
 	can_build = no
 
+	prerequisites = {
+		"tech_hypercomms_forum"
+	}
+	show_tech_unlock_if = {
+		owner = {
+			has_origin = origin_primal_calling
+			has_beastfighter_job = yes
+		}
+	}
+
 	allow = {
 		has_major_upgraded_capital = yes
 	}
@@ -785,13 +666,6 @@ primal_arena_3 = {
 	destroy_trigger = {
 		owner = {
 			has_beastfighter_job = no
-		}
-	}
-
-	show_tech_unlock_if = {
-		owner = {
-			has_origin = origin_primal_calling
-			has_beastfighter_job = yes
 		}
 	}
 
@@ -804,21 +678,15 @@ primal_arena_3 = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-		}
-		upkeep = {
-			energy = @b3_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 3
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 6
-	}
-
-	prerequisites = {
-		"tech_hypercomms_forum"
 	}
 }
 
@@ -828,6 +696,10 @@ symbiosis_nexus = {
 	category = amenity
 	icon = wildlife_sanctuary
 
+	upgrades = {
+		"symbiosis_nexus_2"
+	}
+
 	potential = {
 		owner = {
 			has_symbiosis_integrator_job = yes
@@ -849,21 +721,15 @@ symbiosis_nexus = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 1
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 2
-	}
-
-	upgrades = {
-		"symbiosis_nexus_2"
 	}
 }
 
@@ -873,6 +739,21 @@ symbiosis_nexus_2 = {
 	icon = wildlife_sanctuary_2
 	can_build = no
 
+	prerequisites = {
+		"tech_heritage_site"
+	}
+
+	show_tech_unlock_if = {
+		owner = {
+			has_origin = origin_primal_calling
+			has_symbiosis_integrator_job = yes
+		}
+	}
+
+	upgrades = {
+		"symbiosis_nexus_3"
+	}
+
 	allow = {
 		has_upgraded_capital = yes
 	}
@@ -880,13 +761,6 @@ symbiosis_nexus_2 = {
 	destroy_trigger = {
 		owner = {
 			has_symbiosis_integrator_job = no
-		}
-	}
-
-	show_tech_unlock_if = {
-		owner = {
-			has_origin = origin_primal_calling
-			has_symbiosis_integrator_job = yes
 		}
 	}
 
@@ -899,25 +773,15 @@ symbiosis_nexus_2 = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-		}
-		upkeep = {
-			energy = @b2_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 2
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 4
-	}
-
-	upgrades = {
-		"symbiosis_nexus_3"
-	}
-
-	prerequisites = {
-		"tech_heritage_site"
 	}
 }
 
@@ -927,6 +791,16 @@ symbiosis_nexus_3 = {
 	icon = wildlife_sanctuary_3
 	can_build = no
 
+	prerequisites = {
+		"tech_hypercomms_forum"
+	}
+	show_tech_unlock_if = {
+		owner = {
+			has_origin = origin_primal_calling
+			has_symbiosis_integrator_job = yes
+		}
+	}
+
 	allow = {
 		has_major_upgraded_capital = yes
 	}
@@ -934,13 +808,6 @@ symbiosis_nexus_3 = {
 	destroy_trigger = {
 		owner = {
 			has_symbiosis_integrator_job = no
-		}
-	}
-
-	show_tech_unlock_if = {
-		owner = {
-			has_origin = origin_primal_calling
-			has_symbiosis_integrator_job = yes
 		}
 	}
 
@@ -953,20 +820,14 @@ symbiosis_nexus_3 = {
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-		}
-		upkeep = {
-			energy = @b3_upkeep
+		inline_script = {
+			script = buildings/resources/tec_resource_cost
+			tier = 3
 		}
 	}
 
 	inline_script = {
 		script = jobs/wranglers_add
 		AMOUNT = 6
-	}
-
-	prerequisites = {
-		"tech_hypercomms_forum"
 	}
 }

@@ -1,0 +1,49 @@
+# common\inline_scripts\jobs\tec_historical_curator.txt
+
+#inline_script = {
+#	script = jobs/tec_historical_curator
+#	count = 2
+#	mult = 1
+#	display = with_desc
+#	trigger = ""
+#	default_job = historical_curator
+#	default_trigger = "is_gestalt = yes"
+#}
+
+inline_script = {
+	script = jobs/tec_job
+	job = historical_curator
+	count = $count$
+	mult = $mult$
+	display = $display$
+	trigger = "
+		exists = owner
+
+		$trigger$
+		
+		owner = { inline_script = { script = tec_read_cache scope = country trigger = tec_uses_regular_empire_jobs }}
+	"
+	default_job = $default_job$
+	default_job = no
+	default_trigger = "$default_trigger$"
+	default_trigger = "always = no"
+}
+
+inline_script = {
+	script = jobs/tec_job
+	job = drone_historical_curator
+	count = $count$
+	mult = $mult$
+	display = $display$
+	trigger = "
+		exists = owner
+
+		$trigger$
+
+		owner = { is_gestalt = yes }
+	"
+	default_job = $default_job$
+	default_job = no
+	default_trigger = "$default_trigger$"
+	default_trigger = "always = no"
+}

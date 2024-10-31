@@ -901,6 +901,33 @@ namespace = tec_trait
 								}
 							}
 						}
+						modifier = {	# mmmmmm tasty
+							factor = 5
+							OR = {
+								AND = {
+									event_target:tec_pop_that_eats = {
+										OR = {
+											is_lithoid = no
+											tec_is_cyborg_species = yes
+										}
+									}
+									species = {
+										has_trait = trait_delicious
+									}
+								}
+								AND = {
+									event_target:tec_pop_that_eats = {
+										OR = {
+											is_lithoid = yes
+											tec_is_cyborg_species = yes
+										}
+									}
+									species = {
+										has_trait = trait_felsic
+									}
+								}
+							}
+						}
 						modifier = {	# Weak pops are easy prey
 							factor = 5
 							species = {
