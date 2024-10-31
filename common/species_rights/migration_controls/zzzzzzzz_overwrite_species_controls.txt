@@ -24,10 +24,17 @@ migration_control_no = {
 		exists = from
 		NOR = {
 			AND = {
-				from = { is_individual_machine = no }
-				has_trait = trait_machine_unit
+				from = {
+					OR = {
+						is_individual_machine = yes
+						has_country_flag = synthetic_empire
+					}
+				}
+				OR = {
+					has_trait = trait_machine_unit
+					has_trait = trait_mechanical
+				}
 			}
-			has_trait = trait_mechanical
 			has_trait = trait_tec_bioservant
 		}
 	}

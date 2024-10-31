@@ -161,6 +161,10 @@ tech_mine_rare_crystals = {
 		factor = 2
 		mult = value:tec_tech_weight_bonus|TECH|tech_mine_rare_crystals|
 		mult = value:tec_tech_access_to_natural_strategic_mine_weight|RESOURCE|rare_crystals|
+		modifier = {
+			add = 1
+			has_country_flag = tech_mine_rare_crystals_culling_boost
+		}	
 	}
 
 	ai_weight = {

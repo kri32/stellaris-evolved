@@ -109,6 +109,16 @@ MACHINE = {
 	graphical_culture = synthetics_01
 	move_pop_sound_effect = "robot_pops_move"
 	resources = {}
+
+	random_weight = {
+		base = 1
+	}
+	ethics_to_prefer = {
+		ethic_gestalt_consciousness
+	}
+	preferred_ethics_weight = {
+		base = 6.5 #about 50% of machine empires would spawn as gestalt consciousness vs any type of individualistic
+	}
 }
 
 ROBOT = {

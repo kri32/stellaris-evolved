@@ -32,6 +32,15 @@ sshipyard = {
 				}
 			}
 		}
+
+		has_starbase_module = shipyard
+
+		owner = {
+			OR = {
+				is_ai = no
+				uses_standard_ship_sizes = yes
+			}
+		}
 	}
 
 	weight_modifier = {
@@ -57,11 +66,25 @@ sshipyard = {
 				tec_is_mega_shipyard = yes
 			}
 		}
+		modifier = {
+			factor = 0
+			exists = owner
+			owner = {
+				uses_standard_ship_sizes = no
+			}
+		}
 	}
 
 	ai_design = {
 		min = {
-			base = 1
+			base = 0
+			modifier = {
+				add = 1
+				exists = owner
+				owner = {
+					uses_standard_ship_sizes = yes
+				}
+			}
 		}
 
 		ratio = {
@@ -78,6 +101,13 @@ sshipyard = {
 				exists = owner
 				owner = {
 					has_ethic = ethic_fanatic_militarist
+				}
+			}
+			modifier = {
+				factor = 0
+				exists = owner
+				owner = {
+					uses_standard_ship_sizes = no
 				}
 			}
 		}
@@ -273,6 +303,18 @@ sshipyard = {
 			}
 		}
 	}
+}
+
+# Hatchery
+inline_script = {
+	script = grand_archive/ship_building_starbase_type
+	TYPE = hatchery
+}
+
+# Beastport
+inline_script = {
+	script = grand_archive/ship_building_starbase_type
+	TYPE = beastport
 }
 
 # Anchorage
@@ -954,8 +996,8 @@ sfortress = {
 					factor = 0
 					exists = owner
 					owner = {
-						has_monthly_income = { 
-							resource = sr_zro 
+						has_monthly_income = {
+							resource = sr_zro
 							value < 2
 						}
 					}
@@ -1334,7 +1376,7 @@ smining_hub = {
 	potential = {
 		has_starbase_size > starbase_outpost
 		exists = owner
-		owner = { 
+		owner = {
 			has_ethic = ethic_gestalt_consciousness
 			has_valid_civic = civic_machine_astromining_drones
 		}

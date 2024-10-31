@@ -1408,6 +1408,10 @@ set_first_contact_starting_stage = {
 					drone = { setup_first_contact_path = { TYPE = drones } }
 					drone_faction = { setup_first_contact_path = { TYPE = drones } }
 					cloud = { setup_first_contact_path = { TYPE = void_clouds } }
+					voidworms = { setup_first_contact_path = { TYPE = voidworms } }
+					voidworms_crisis = { setup_first_contact_path = { TYPE = voidworms } }
+					voidworms_treasure_hunters = { setup_first_contact_path = { TYPE = voidworms } }
+					cutholoids = { setup_first_contact_path = { TYPE = cutholoids } }
 					# NPC factions
 					dormant_marauders = { setup_first_contact_path = { TYPE = marauders } }
 					pirate = { setup_first_contact_path = { TYPE = pirates } }

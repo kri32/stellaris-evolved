@@ -1,4 +1,5 @@
-# O V E R W R I TE 
+# common\starbase_types\zz_starbase_types.txt
+
 # 00_starbase_types
 
 #root = starbase

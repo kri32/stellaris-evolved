@@ -10,6 +10,7 @@
 #	event_chain = "fruitful_partnership_chain"
 #	energy = 1500
 #	food = 1000
+#	days_to_research = 30
 #	tech_department = society_technology
 #	picture = GFX_evt_alien_nature
 #	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"

@@ -1,5 +1,4 @@
-
-
+# common\section_templates\zz_starbase_sections.txt
 
 ship_section_template = {
 	key = "TEC_INTERCEPTOR_STARBASE_SECTION"

@@ -21,6 +21,7 @@ generate_start_deposits_and_blockers = {
 		add_deposit = d_tomb_world_ruins
 		if = {
 			limit = {
+				exists = owner
 				owner = {
 					is_environmental_architects_empire = yes
 				}
@@ -33,6 +34,7 @@ generate_start_deposits_and_blockers = {
 	}
 	else_if = {
 		limit = {
+			exists = owner
 			owner = {
 				has_civic = civic_machine_servitor
 			}
@@ -41,6 +43,7 @@ generate_start_deposits_and_blockers = {
 		add_deposit = d_unsupervised_settlement
 		if = {
 			limit = {
+				exists = owner
 				owner = {
 					is_environmental_architects_empire = yes
 				}
@@ -53,6 +56,7 @@ generate_start_deposits_and_blockers = {
 	}
 	else_if = {
 		limit = {
+			exists = owner
 			owner = {
 				is_environmental_architects_empire = yes
 			}
@@ -65,6 +69,7 @@ generate_start_deposits_and_blockers = {
 	}
 	else_if = {
 		limit = {
+			exists = owner
 			owner = {
 				has_civic = civic_machine_terminator
 				NOT = { has_origin = origin_machine }
@@ -76,6 +81,7 @@ generate_start_deposits_and_blockers = {
 	}
 	else_if = {
 		limit = {
+			exists = owner
 			owner = {
 				has_civic = civic_machine_assimilator
 				NOT = { has_origin = origin_machine }
@@ -87,6 +93,7 @@ generate_start_deposits_and_blockers = {
 	}
 	else_if = {
 		limit = {
+			exists = owner
 			owner = {
 				is_machine_empire = yes
 				NOT = { has_origin = origin_machine }
@@ -99,6 +106,7 @@ generate_start_deposits_and_blockers = {
 
 	else_if = {
 		limit = {
+			exists = owner
 			owner = {
 				NOR = {
 					has_origin = origin_machine
@@ -112,6 +120,7 @@ generate_start_deposits_and_blockers = {
 	}
 	else_if = {
 		limit = {
+			exists = owner
 			owner = {
 				is_hive_empire = yes
 			}
@@ -130,6 +139,7 @@ generate_start_deposits_and_blockers = {
 	}
 	if = {
 		limit = {
+			exists = owner
 			owner = {
 				is_lithoid_empire = yes
 				NOR = {
@@ -146,6 +156,7 @@ generate_start_deposits_and_blockers = {
 
 	if = {
 		limit = {
+			exists = owner
 			owner = {
 				is_lithoid_empire = yes
 				has_valid_civic = civic_hive_devouring_swarm
@@ -159,6 +170,7 @@ generate_start_deposits_and_blockers = {
 
 	if = {
 		limit = {
+			exists = owner
 			owner = {
 				is_apocalyptic_empire = yes
 			}
@@ -182,6 +194,7 @@ generate_start_deposits_and_blockers = {
 
 	if = {
 		limit = {
+			exists = owner
 			owner = {
 				has_origin = origin_life_seeded
 			}
@@ -200,11 +213,17 @@ generate_start_deposits_and_blockers = {
 		add_deposit = d_rushing_waterfalls
 		add_deposit = d_tempestous_mountain
 		if = {
-			limit = { owner = { is_machine_empire = yes } }
+			limit = {
+				exists = owner
+				owner = { is_machine_empire = yes }
+			}
 			add_deposit = d_rushing_waterfalls
 		}
 		if = {
-			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			limit = {
+				exists = owner
+				owner = { has_valid_civic = civic_machine_servitor }
+			}
 			add_deposit = d_hot_springs
 		}
 
@@ -217,11 +236,17 @@ generate_start_deposits_and_blockers = {
 		add_deposit = d_rugged_woods
 		add_deposit = d_fertile_lands
 		if = {
-			limit = { owner = { is_machine_empire = no } }
+			limit = {
+				exists = owner
+				owner = { is_machine_empire = no }
+			}
 			add_deposit = d_rugged_woods
 
 			if = {
-				limit = { owner = { is_lithoid_empire = yes } }
+				limit = {
+					exists = owner
+					owner = { is_lithoid_empire = yes }
+				}
 				add_deposit = d_rich_mountain
 			}
 			else = {
@@ -239,11 +264,17 @@ generate_start_deposits_and_blockers = {
 		add_deposit = d_rushing_waterfalls
 		add_deposit = d_tempestous_mountain
 		if = {
-			limit = { owner = { is_machine_empire = yes } }
+			limit = {
+				exists = owner
+				owner = { is_machine_empire = no }
+			}
 			add_deposit = d_rushing_waterfalls
 		}
 		if = {
-			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			limit = {
+				exists = owner
+				owner = { has_valid_civic = civic_machine_servitor }
+			}
 			add_deposit = d_hot_springs
 		}
 
@@ -256,9 +287,15 @@ generate_start_deposits_and_blockers = {
 		add_deposit = d_green_hills
 		add_deposit = d_lush_jungle
 		if = {
-			limit = { owner = { is_machine_empire = no } }
+			limit = {
+				exists = owner
+				owner = { is_machine_empire = no }
+			}
 			if = {
-				limit = { owner = { is_lithoid_empire = yes } }
+				limit = {
+					exists = owner
+					owner = { is_lithoid_empire = yes }
+				}
 				add_deposit = d_submerged_ore_veins
 			}
 			else = {

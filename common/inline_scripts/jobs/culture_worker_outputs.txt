@@ -126,3 +126,5 @@ triggered_planet_modifier = {
 	planet_housing_mult = 0.01
 	mult = value:scripted_ethics_weight_mult|ETHIC|pluralist|
 }
+
+inline_script = "jobs/galactic_curator_council_output"

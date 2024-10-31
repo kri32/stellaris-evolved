@@ -482,6 +482,8 @@ values_others = {
 		has_valid_civic = civic_hive_empath
 		has_valid_civic = civic_machine_exploration_protocol
 		tec_is_fruitful_empire = yes
+		has_animal_handler_job = yes
+		has_symbiosis_integrator_job = yes
 	}
 }
 

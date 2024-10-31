@@ -1,3 +1,5 @@
+# common\species_rights\purge_types\zzzzzzzz_overwrite_purge_types.txt
+
 # from = country
 # this = species
 
@@ -33,7 +35,7 @@ purge_normal = {
 							has_policy_flag = purge_allowed
 						}
 					}
-					is_robotic_species = yes
+					from = { is_robotic_species = yes }
 				}
 				NOT = {
 					from = {
